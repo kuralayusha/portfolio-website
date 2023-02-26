@@ -1,17 +1,34 @@
-#dark .navBar {
-    background-color: #000;
-    color: #fff;
+.navBar {
+
     padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+#dark .navBar {
+    background-color: #000;
+    color: #fff;
+}
+
 #light .navBar {
-    background-color: #fff;
+    background-color: #ecececdc;
     color: #000;
+}
+
+.mainPage--container {
     padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+#dark .mainPage--container {
+    background-color: #232;
+    color: #fff;
+}
+
+#light .mainPage--container {
+    background-color: rgba(165, 211, 165, 0.116);
+    color: #250c0c;
 }
