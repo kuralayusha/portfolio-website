@@ -1,15 +1,22 @@
-function NavBar() {
+
+
+type NavBarProps = {
+    darkMode: boolean
+    setDarkMode: any
+}
+
+function NavBar( { setDarkMode, darkMode }: NavBarProps) {
+
+    function handleDarkMode() {
+        setDarkMode((prev: boolean) => !prev)
+    }
+
 return (
     <div className="navBar">
-        <h1>KuralaYusha</h1>
-        <button>Dark Mode</button>
-
-        <style jsx>{`
-            .navBar {
-                background-color: #000;
-                color: #fff;
-            }
-        `}</style>
+        <h1>Kurleygram</h1>
+        <button onClick={handleDarkMode}>
+            {darkMode ? 'Light Mode' : 'Dark Mode'}
+        </button>
     </div>
 )
 }
