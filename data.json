@@ -5,7 +5,9 @@
       "image": "/images/nextjs-blog.svg",
       "description": "A simple blog built with Next.js and deployed on Vercel.",
       "link": "https://nextjs-blog-xyz.vercel.app/",
-      "technologies": ["Next.js", "React", "Vercel"]
+      "technologies": ["Next.js", "React", "Vercel"],
+      "likes": 0
+
     },
     {
       "id": 2,
@@ -13,7 +15,8 @@
       "image": "/images/ecommerce-store.svg",
       "description": "An online store built with Next.js and Strapi CMS.",
       "link": "https://ecommerce-store-xyz.vercel.app/",
-      "technologies": ["Next.js", "React", "Strapi"]
+      "technologies": ["Next.js", "React", "Strapi"],
+      "likes": 0
     },
     {
       "id": 3,
@@ -21,6 +24,7 @@
       "image": "/images/social-network.svg",
       "description": "A social network built with Next.js and Firebase.",
       "link": "https://social-network-xyz.vercel.app/",
-      "technologies": ["Next.js", "React", "Firebase"]
+      "technologies": ["Next.js", "React", "Firebase"],
+      "likes": 0
     }
   ]
