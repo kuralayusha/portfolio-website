@@ -1,25 +1,40 @@
+import { ProjectData } from '@/pages'
+import rps from '../public/images/country-ss-1.jpg'
+
 type ProjectPostsProps = {
-  data: any
+  data: ProjectData
 }
 
 function ProjectPosts({ data }: ProjectPostsProps) {
+  console.log(
+    data.map((project: any) =>
+      project.image.map((image: any) => image)
+    )
+  )
+
   return (
     <div className="posts--project">
-      {data.map((project: any) => (
-        <div className="project--card">
-          <div className="card--img">
-            <img src={project.image} alt="" />
-          </div>
-          <div className="card--info">
-            <h1>{project.title}</h1>
-            <p>{project.description}</p>
-            <div className="card--info--btns">
-              <button className="card--info--btn">visit</button>
-              <button className="card--info--btn">like</button>
-            </div>
-          </div>
+      {data.map((project) => (
+        <div className="project--card" key={project.id}>
+          {/* map the images and just print the first one */}
+
+          <img
+            src={project.image[0]}
+            style={{
+              width: '100px',
+              height: '100px',
+            }}
+          />
         </div>
       ))}
+      <p>im here</p>
+      <img
+        src={rps.src}
+        style={{
+          width: '100px',
+          height: '100px',
+        }}
+      />
     </div>
   )
 }

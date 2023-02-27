@@ -1,30 +1,38 @@
 [
-    {
-      "id": 1,
-      "name": "REST Countries API",
-      "image": ["/images/country-ss-1.jpg", "/images/country-ss-2.jpg"],
-      "description": "A simple blog built with Next.js and deployed on Vercel.",
-      "link": "https://kuralayusha.github.io/countries/#/",
-      "technologies": ["React", "TypeScript", "API"],
-      "likes": 0
-
-    },
-    {
-      "id": 2,
-      "name": "E-commerce Store",
-      "image": "/images/ecommerce-store.svg",
-      "description": "An online store built with Next.js and Strapi CMS.",
-      "link": "https://ecommerce-store-xyz.vercel.app/",
-      "technologies": ["Next.js", "React", "Strapi"],
-      "likes": 0
-    },
-    {
-      "id": 3,
-      "name": "Social Network",
-      "image": "/images/social-network.svg",
-      "description": "A social network built with Next.js and Firebase.",
-      "link": "https://social-network-xyz.vercel.app/",
-      "technologies": ["Next.js", "React", "Firebase"],
-      "likes": 0
-    }
-  ]
+  {
+    "id": 1,
+    "name": "REST Countries API",
+    "image": ["/images/country-ss-1.jpg", "/images/country-ss-2.jpg"],
+    "description": "A simple blog built with Next.js and deployed on Vercel.",
+    "link": "https://kuralayusha.github.io/countries/#/",
+    "technologies": ["React", "TypeScript", "API"],
+    "likes": 0
+  },
+  {
+    "id": 2,
+    "name": "falan filan projesi",
+    "image": ["/images/country-ss-3.jpg", "/images/country-ss-4.jpg"],
+    "description": "A simple blog built with Next.js and deployed on Vercel.",
+    "link": "https://kuralayusha.github.io/countries/#/",
+    "technologies": ["React", "TypeScript", "API"],
+    "likes": 0
+  },
+  {
+    "id": 3,
+    "name": "dahada uwww projesi",
+    "image": ["/images/country-ss-5.jpg", "/images/country-ss-6.jpg"],
+    "description": "A simple blog built with Next.js and deployed on Vercel.",
+    "link": "https://kuralayusha.github.io/countries/#/",
+    "technologies": ["React", "TypeScript", "API"],
+    "likes": 0
+  },
+  {
+    "id": 4,
+    "name": "fadasdalan filan sadasdasd",
+    "image": ["/images/country-ss-7.jpg", "/images/country-ss-8.jpg"],
+    "description": "A simple blog built with Next.js and deployed on Vercel.",
+    "link": "https://kuralayusha.github.io/countries/#/",
+    "technologies": ["React", "TypeScript", "API"],
+    "likes": 0
+  }
+]

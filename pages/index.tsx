@@ -6,12 +6,23 @@ import MainPage from '../components/MainPage'
 
 import projectsData from '../data.json'
 
+export type ProjectData = {
+  id: number
+  name: string
+  image: string[]
+  description: string
+  link: string
+  technologies: string[]
+  likes: number
+}[]
+
 export default function Home() {
+  const datatwo = projectsData
   const [darkMode, setDarkMode] = useState<boolean>(false)
   const [data, setData] = useState(projectsData)
 
-  console.log({ projectsData })
-  console.log(darkMode)
+  // console.log({ projectsData })
+  // console.log(darkMode)
 
   return (
     <div id={darkMode ? 'dark' : 'light'}>

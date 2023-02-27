@@ -1,9 +1,10 @@
 import ProjectPosts from './ProjectPosts'
+import countryPhoto from '../images/country-ss-1.jpg'
+import { ProjectData } from '@/pages'
 
 type MainPageProps = {
-  data: any
+  data: ProjectData
 }
-
 function MainPage({ data }: MainPageProps) {
   return (
     <div className="mainPage--container">
