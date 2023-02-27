@@ -4,9 +4,16 @@ import { useState } from 'react'
 import NavBar from '../components/NavBar'
 import MainPage from '../components/MainPage'
 
+import data from '../data.json'
+
+
 export default function Home() {
   const [darkMode, setDarkMode] = useState<boolean>(false)
+  const [mainData, setMainData] = useState(data)
+  
 
+  
+  console.log(mainData);
   console.log(darkMode);
   
   return (
