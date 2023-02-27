@@ -1,11 +1,11 @@
 [
     {
       "id": 1,
-      "name": "Next.js Blog",
-      "image": "/images/nextjs-blog.svg",
+      "name": "REST Countries API",
+      "image": ["/images/country-ss-1.jpg", "/images/country-ss-2.jpg"],
       "description": "A simple blog built with Next.js and deployed on Vercel.",
-      "link": "https://nextjs-blog-xyz.vercel.app/",
-      "technologies": ["Next.js", "React", "Vercel"],
+      "link": "https://kuralayusha.github.io/countries/#/",
+      "technologies": ["React", "TypeScript", "API"],
       "likes": 0
 
     },
