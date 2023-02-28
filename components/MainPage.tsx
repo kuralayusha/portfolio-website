@@ -16,7 +16,7 @@ function MainPage({ data }: MainPageProps) {
     fetchVisitors()
     async function fetchVisitors() {
       const response = await fetch(
-        'https://api.countapi.xyz/update/kurleys-web/profile-site/?amount=0.5'
+        'https://api.countapi.xyz/update/kurleys-web/profile-site/?amount=1'
       )
       const data = await response.json()
       setVisitorsCount(data.value)

@@ -33,3 +33,40 @@
     background-color: rgba(165, 211, 165, 0.116);
     color: #250c0c;
 }
+
+.post {
+    max-width: 150px;
+    max-height: 150px;
+    min-width: 150px;
+    min-height: 150px;
+    border: 1px solid #000;
+}
+
+.project-card {
+    position: relative;
+}
+
+.post-entry-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    max-width: 150px;
+    max-height: 150px;
+    min-height: 150px;
+    min-width: 150px;
+    background-color: #0000003f;
+    padding: 3px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.post-entry-info h1 {
+    font-size: 20px;
+    color: #fff;
+}
+
+.post-entry-info p {
+    font-size: 15px;
+    color: #fff;
+}
