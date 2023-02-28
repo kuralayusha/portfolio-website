@@ -55,7 +55,7 @@ function MainPage({ data }: MainPageProps) {
               </div>
             </div>
             <div className="bio--mid">
-              <p>7 projects</p>
+              <p>{data.length} projects</p>
               <p>15 total likes</p>
               <p>{fatching ? '...' : visitorsCount} visitors</p>
             </div>
