@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import NavBar from '../components/NavBar'
 import MainPage from '../components/MainPage'
@@ -20,6 +20,8 @@ export default function Home() {
   const datatwo = projectsData
   const [darkMode, setDarkMode] = useState<boolean>(false)
   const [data, setData] = useState(projectsData)
+
+  // make a async function to fetch this "api.countapi.xyz/update/kurleys-web/profile-site/?amount=1" url and set the visitors state to the response
 
   // console.log({ projectsData })
   // console.log(darkMode)

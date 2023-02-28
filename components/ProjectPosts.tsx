@@ -1,5 +1,5 @@
 import { ProjectData } from '@/pages'
-import rps from '../public/images/country-ss-1.jpg'
+import ShowPostInfo from './ShowPostInfo'
 
 type ProjectPostsProps = {
   data: ProjectData
@@ -17,24 +17,16 @@ function ProjectPosts({ data }: ProjectPostsProps) {
       {data.map((project) => (
         <div className="project--card" key={project.id}>
           {/* map the images and just print the first one */}
-
+          <ShowPostInfo />
           <img
             src={project.image[0]}
             style={{
-              width: '100px',
-              height: '100px',
+              width: '150px',
+              height: '150px',
             }}
           />
         </div>
       ))}
-      <p>im here</p>
-      <img
-        src={rps.src}
-        style={{
-          width: '100px',
-          height: '100px',
-        }}
-      />
     </div>
   )
 }

@@ -3,35 +3,76 @@
     "id": 1,
     "name": "REST Countries API",
     "image": ["/images/country-ss-1.jpg", "/images/country-ss-2.jpg"],
-    "description": "A simple blog built with Next.js and deployed on Vercel.",
+    "description": "A simple api work",
     "link": "https://kuralayusha.github.io/countries/#/",
     "technologies": ["React", "TypeScript", "API"],
     "likes": 0
   },
   {
     "id": 2,
-    "name": "falan filan projesi",
-    "image": ["/images/country-ss-3.jpg", "/images/country-ss-4.jpg"],
-    "description": "A simple blog built with Next.js and deployed on Vercel.",
-    "link": "https://kuralayusha.github.io/countries/#/",
+    "name": "IP Address Tracker",
+    "image": ["/images/ip-ss-1.jpg"],
+    "description": "A simple tracker",
+    "link": "https://kuralayusha.github.io/ip-tracker/",
     "technologies": ["React", "TypeScript", "API"],
     "likes": 0
   },
   {
     "id": 3,
-    "name": "dahada uwww projesi",
-    "image": ["/images/country-ss-5.jpg", "/images/country-ss-6.jpg"],
-    "description": "A simple blog built with Next.js and deployed on Vercel.",
-    "link": "https://kuralayusha.github.io/countries/#/",
+    "name": "Kanban Task Manager",
+    "image": [
+      "/images/kanban-ss-1.jpg",
+      "/images/kanban-ss-2.jpg",
+      "/images/kanban-ss-3.jpg",
+      "/images/kanban-ss-4.jpg"
+    ],
+    "description": "A simple taskmanager",
+    "link": "https://mellifluous-caramel-c4234f.netlify.app",
     "technologies": ["React", "TypeScript", "API"],
     "likes": 0
   },
   {
     "id": 4,
-    "name": "fadasdalan filan sadasdasd",
-    "image": ["/images/country-ss-7.jpg", "/images/country-ss-8.jpg"],
-    "description": "A simple blog built with Next.js and deployed on Vercel.",
-    "link": "https://kuralayusha.github.io/countries/#/",
+    "name": "News Home Page",
+    "image": ["/images/newsHomePage-web-ss.PNG"],
+    "description": "A simple taskmanager",
+    "link": "https://mellifluous-caramel-c4234f.netlify.app",
+    "technologies": ["React", "TypeScript", "API"],
+    "likes": 0
+  },
+  {
+    "id": 5,
+    "name": "Test web app",
+    "image": [
+      "/images/question-web-ss.jpg",
+      "/images/question-web-ss-2.jpg"
+    ],
+    "description": "A simple test app",
+    "link": "https://mellifluous-caramel-c4234f.netlify.app",
+    "technologies": ["React", "TypeScript", "API"],
+    "likes": 0
+  },
+  {
+    "id": 6,
+    "name": "rps & rpsls game",
+    "image": [
+      "/images/rps-ss-1.jpg",
+      "/images/rps-ss-2.jpg",
+      "/images/rps-ss-3.jpg"
+    ],
+
+    "description": "A simple rps game",
+    "link": "https://mellifluous-caramel-c4234f.netlify.app",
+    "technologies": ["React", "TypeScript", "API"],
+    "likes": 0
+  },
+  {
+    "id": 7,
+    "name": "xox game",
+    "image": ["/images/xox-ss-1.jpg", "/images/xox-ss-2.jpg"],
+
+    "description": "A simple xox game",
+    "link": "https://mellifluous-caramel-c4234f.netlify.app",
     "technologies": ["React", "TypeScript", "API"],
     "likes": 0
   }
