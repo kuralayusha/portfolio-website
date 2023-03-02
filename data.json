@@ -6,7 +6,11 @@
     "description": "A simple api work",
     "link": "https://kuralayusha.github.io/countries/#/",
     "technologies": ["React", "TypeScript", "API"],
-    "likes": 0
+    "status": {
+      "likeApi": "here comes the update link",
+      "likes": "here comes the get link",
+      "liked": "flase"
+    }
   },
   {
     "id": 2,
@@ -15,7 +19,11 @@
     "description": "A simple tracker",
     "link": "https://kuralayusha.github.io/ip-tracker/",
     "technologies": ["React", "TypeScript", "API"],
-    "likes": 0
+    "status": {
+      "likeApi": "here comes the update link",
+      "likes": "here comes the get link",
+      "liked": "flase"
+    }
   },
   {
     "id": 3,
@@ -29,7 +37,11 @@
     "description": "A simple taskmanager",
     "link": "https://mellifluous-caramel-c4234f.netlify.app",
     "technologies": ["React", "TypeScript", "API"],
-    "likes": 0
+    "status": {
+      "likeApi": "here comes the update link",
+      "likes": "here comes the get link",
+      "liked": "flase"
+    }
   },
   {
     "id": 4,
@@ -38,7 +50,11 @@
     "description": "A simple taskmanager",
     "link": "https://mellifluous-caramel-c4234f.netlify.app",
     "technologies": ["React", "TypeScript", "API"],
-    "likes": 0
+    "status": {
+      "likeApi": "here comes the update link",
+      "likes": "here comes the get link",
+      "liked": "flase"
+    }
   },
   {
     "id": 5,
@@ -50,7 +66,11 @@
     "description": "A simple test app",
     "link": "https://mellifluous-caramel-c4234f.netlify.app",
     "technologies": ["React", "TypeScript", "API"],
-    "likes": 0
+    "status": {
+      "likeApi": "here comes the update link",
+      "likes": "here comes the get link",
+      "liked": "flase"
+    }
   },
   {
     "id": 6,
@@ -64,7 +84,11 @@
     "description": "A simple rps game",
     "link": "https://mellifluous-caramel-c4234f.netlify.app",
     "technologies": ["React", "TypeScript", "API"],
-    "likes": 0
+    "status": {
+      "likeApi": "here comes the update link",
+      "likes": "here comes the get link",
+      "liked": "flase"
+    }
   },
   {
     "id": 7,
@@ -74,6 +98,10 @@
     "description": "A simple xox game",
     "link": "https://mellifluous-caramel-c4234f.netlify.app",
     "technologies": ["React", "TypeScript", "API"],
-    "likes": 0
+    "status": {
+      "likeApi": "here comes the update link",
+      "likes": "here comes the get link",
+      "liked": "flase"
+    }
   }
 ]
