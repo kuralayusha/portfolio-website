@@ -7,9 +7,10 @@
     "link": "https://kuralayusha.github.io/countries/#/",
     "technologies": ["React", "TypeScript", "API"],
     "status": {
-      "likeApi": "here comes the update link",
-      "likes": "here comes the get link",
-      "liked": "flase"
+      "views": "here comes the inc update link",
+      "liked": false,
+      "increaseLikes": "https://api.countapi.xyz/update/kurleys-web/dataLikes1/?amount=1",
+      "decreaseLikes": "https://api.countapi.xyz/update/kurleys-web/dataLikes1/?amount=-1"
     }
   },
   {
@@ -20,9 +21,10 @@
     "link": "https://kuralayusha.github.io/ip-tracker/",
     "technologies": ["React", "TypeScript", "API"],
     "status": {
-      "likeApi": "here comes the update link",
-      "likes": "here comes the get link",
-      "liked": "flase"
+      "views": "here comes the inc update link",
+      "liked": false,
+      "increaseLikes": "here comes the inc update link",
+      "decreaseLikes": "here comes the dec update link"
     }
   },
   {
@@ -38,9 +40,10 @@
     "link": "https://mellifluous-caramel-c4234f.netlify.app",
     "technologies": ["React", "TypeScript", "API"],
     "status": {
-      "likeApi": "here comes the update link",
-      "likes": "here comes the get link",
-      "liked": "flase"
+      "views": "here comes the inc update link",
+      "liked": false,
+      "increaseLikes": "here comes the inc update link",
+      "decreaseLikes": "here comes the dec update link"
     }
   },
   {
@@ -51,9 +54,10 @@
     "link": "https://mellifluous-caramel-c4234f.netlify.app",
     "technologies": ["React", "TypeScript", "API"],
     "status": {
-      "likeApi": "here comes the update link",
-      "likes": "here comes the get link",
-      "liked": "flase"
+      "views": "here comes the inc update link",
+      "liked": false,
+      "increaseLikes": "here comes the inc update link",
+      "decreaseLikes": "here comes the dec update link"
     }
   },
   {
@@ -67,9 +71,10 @@
     "link": "https://mellifluous-caramel-c4234f.netlify.app",
     "technologies": ["React", "TypeScript", "API"],
     "status": {
-      "likeApi": "here comes the update link",
-      "likes": "here comes the get link",
-      "liked": "flase"
+      "views": "here comes the inc update link",
+      "liked": false,
+      "increaseLikes": "here comes the inc update link",
+      "decreaseLikes": "here comes the dec update link"
     }
   },
   {
@@ -85,9 +90,10 @@
     "link": "https://mellifluous-caramel-c4234f.netlify.app",
     "technologies": ["React", "TypeScript", "API"],
     "status": {
-      "likeApi": "here comes the update link",
-      "likes": "here comes the get link",
-      "liked": "flase"
+      "views": "here comes the inc update link",
+      "liked": false,
+      "increaseLikes": "here comes the inc update link",
+      "decreaseLikes": "here comes the dec update link"
     }
   },
   {
@@ -99,9 +105,10 @@
     "link": "https://mellifluous-caramel-c4234f.netlify.app",
     "technologies": ["React", "TypeScript", "API"],
     "status": {
-      "likeApi": "here comes the update link",
-      "likes": "here comes the get link",
-      "liked": "flase"
+      "views": "here comes the inc update link",
+      "liked": false,
+      "increaseLikes": "here comes the inc update link",
+      "decreaseLikes": "here comes the dec update link"
     }
   }
 ]

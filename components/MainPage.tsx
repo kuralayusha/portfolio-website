@@ -3,6 +3,7 @@ import countryPhoto from '../images/country-ss-1.jpg'
 import { ProjectData } from '@/pages'
 import { useState, useEffect } from 'react'
 import SendMeMail from './SendMeMail'
+import Post from './Post'
 
 type MainPageProps = {
   data: ProjectData
@@ -11,6 +12,10 @@ function MainPage({ data }: MainPageProps) {
   const [visitorsCount, setVisitorsCount] = useState<number>()
   const [fatching, setFatching] = useState<boolean>(true)
   const [showMail, setShowMail] = useState<boolean>(false)
+  const [focusInfoId, setFocusInfoId] = useState<number>(0)
+  const [showPost, setShowPost] = useState<number>(0)
+
+  console.log({ showPost })
 
   useEffect(() => {
     fetchVisitors()
@@ -82,9 +87,21 @@ function MainPage({ data }: MainPageProps) {
         </div>
       </div>
       <div className="mainPage--posts">
+        {showPost > 0 && (
+          <Post
+            data={data}
+            focusInfoId={focusInfoId}
+            showPost={showPost}
+          />
+        )}
         <h1>Projects</h1>
 
-        <ProjectPosts data={data} />
+        <ProjectPosts
+          data={data}
+          setFocusInfoId={setFocusInfoId}
+          focusInfoId={focusInfoId}
+          setShowPost={setShowPost}
+        />
       </div>
     </div>
   )

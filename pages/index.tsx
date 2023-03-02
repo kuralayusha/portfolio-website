@@ -13,7 +13,12 @@ export type ProjectData = {
   description: string
   link: string
   technologies: string[]
-  likes: number
+  status: {
+    views: string
+    liked: boolean
+    increaseLikes: string
+    decreaseLikes: string
+  }
 }[]
 
 export default function Home() {
