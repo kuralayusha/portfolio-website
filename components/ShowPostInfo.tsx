@@ -14,9 +14,7 @@ function ShowPostInfo({
   likesData,
   postViews,
 }: ShowPostInfoProps) {
-  // in this useEffect i want to map through the data and for each id i want to fetch the views and set them to an object with the id as a key
-
-  console.log(postViews)
+  // console.log(postViews)
 
   return (
     <div className="post-entry-info">

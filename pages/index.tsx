@@ -74,13 +74,6 @@ export default function Home(props: { pageViwers: number }) {
     }, 500)
   }, [likesData])
 
-  // useEffect(() => {
-  //   localStorage.setItem(
-  //     'userDataStarter',
-  //     JSON.stringify(userDataStarter)
-  //   )
-  // }, [userDataStarter])
-
   return (
     <div id={darkMode ? 'dark' : 'light'}>
       <Head>

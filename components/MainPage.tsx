@@ -4,6 +4,7 @@ import { ProjectData } from '@/pages'
 import { useState, useEffect } from 'react'
 import SendMeMail from './SendMeMail'
 import Post from './Post'
+import Link from 'next/link'
 
 type MainPageProps = {
   data: ProjectData
@@ -97,9 +98,24 @@ function MainPage({
           </div>
         </div>
         <div className="info--socials">
-          <button className="social--btn">twitter</button>
-          <button className="social--btn">instagram</button>
-          <button className="social--btn">linkedIn</button>
+          <Link
+            href="https://twitter.com/agresifcCcsage"
+            target={'_blank'}
+          >
+            <button className="social--btn">twitter</button>
+          </Link>
+          <Link
+            href="https://www.instagram.com/kuralayusha/?igshid=ZDdkNTZiNTM%3D"
+            target={'_blank'}
+          >
+            <button className="social--btn">instagram</button>
+          </Link>
+          <Link
+            href="https://www.linkedin.com/in/yusha-kuralay-6abb161b0/"
+            target={'_blank'}
+          >
+            <button className="social--btn">linkedIn</button>
+          </Link>
         </div>
       </div>
       <div className="mainPage--posts">

@@ -39,7 +39,6 @@ function Post({
   function handleLike(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault()
 
-    // here i want to fetch the link from the data and increase the likes
     if (!userData[showPost].liked) {
       console.log('liked')
       data.map((project) => {
@@ -87,9 +86,7 @@ function Post({
   }
 
   useEffect(() => {
-    // setTimeout(() => {
     localStorage.setItem('userDataStarter', JSON.stringify(userData))
-    // }, 3500)
   }, [userData])
 
   return (
