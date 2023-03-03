@@ -1,12 +1,14 @@
 import { ProjectData } from '@/pages'
 import ShowPostInfo from './ShowPostInfo'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 type ProjectPostsProps = {
   data: ProjectData
   focusInfoId: number
   setFocusInfoId: React.Dispatch<React.SetStateAction<number>>
   setShowPost: React.Dispatch<React.SetStateAction<number>>
+  likesData: { id: number; likes: number }[] | any
+  postViews: { [key: number]: number } | any
 }
 
 function ProjectPosts({
@@ -14,6 +16,8 @@ function ProjectPosts({
   focusInfoId,
   setFocusInfoId,
   setShowPost,
+  likesData,
+  postViews,
 }: ProjectPostsProps) {
   function handleMouseOver(e: React.MouseEvent<HTMLDivElement>) {
     const id = parseInt(e.currentTarget.id)
@@ -26,12 +30,18 @@ function ProjectPosts({
 
   function handleTakeToPost(e: React.MouseEvent<HTMLDivElement>) {
     const id = parseInt(e.currentTarget.id)
+    incrisePostViews(id)
     setShowPost(id)
   }
 
-  console.log({ focusInfoId })
-
-  // when mouse comes to the image show the info onliy for that image
+  function incrisePostViews(id: number) {
+    data.map((project) => {
+      if (project.id === id) {
+        const link = project.status.increaseViews
+        fetch(link)
+      }
+    })
+  }
 
   return (
     <div className="posts--project">
@@ -45,7 +55,12 @@ function ProjectPosts({
           onClick={(e) => handleTakeToPost(e)}
         >
           {focusInfoId === project.id && (
-            <ShowPostInfo data={data} focusInfoId={focusInfoId} />
+            <ShowPostInfo
+              data={data}
+              focusInfoId={focusInfoId}
+              likesData={likesData}
+              postViews={postViews}
+            />
           )}
           <img
             className="post"

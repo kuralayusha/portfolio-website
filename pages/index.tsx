@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import NavBar from '../components/NavBar'
 import MainPage from '../components/MainPage'
 
-import projectsData from '../data.json'
+import projectsData from './api/data.json'
 
 export type ProjectData = {
   id: number
@@ -15,21 +15,71 @@ export type ProjectData = {
   technologies: string[]
   status: {
     views: string
-    liked: boolean
+    increaseViews: string
+    likes: string
     increaseLikes: string
     decreaseLikes: string
   }
 }[]
 
-export default function Home() {
-  const datatwo = projectsData
+export default function Home(props: { pageViwers: number }) {
   const [darkMode, setDarkMode] = useState<boolean>(false)
   const [data, setData] = useState(projectsData)
+  const [visitors, setVisitors] = useState<number>(props.pageViwers)
+  const [likesData, setLikesData] = useState<any>({})
+  const [sumOfLikes, setSumOfLikes] = useState<any>()
+  const [calculating, setCalculating] = useState<boolean>(true)
+  const [userDataStarter, setUserDataStarter] = useState<any>({})
 
-  // make a async function to fetch this "api.countapi.xyz/update/kurleys-web/profile-site/?amount=1" url and set the visitors state to the response
+  useEffect(() => {
+    data.map((project) => {
+      const link = project.status.likes
+      fetchLikes(link)
+      async function fetchLikes(link: string) {
+        const response = await fetch(link)
+        const data = await response.json()
+        setLikesData((prev: any) => ({
+          ...prev,
+          [project.id]: data.value,
+        }))
+      }
+    })
+    const userStarterData = localStorage.getItem('userDataStarter')
+    if (userStarterData === null) {
+      setingUserData()
+    } else {
+      setUserDataStarter(JSON.parse(userStarterData))
+    }
 
-  // console.log({ projectsData })
-  // console.log(darkMode)
+    function setingUserData() {
+      data.map((project) => {
+        console.log('setting the data')
+        setUserDataStarter((prev: any) => ({
+          ...prev,
+          [project.id]: {
+            liked: false,
+          },
+        }))
+      })
+    }
+  }, [])
+  console.log({ userDataStarter })
+
+  useEffect(() => {
+    const arr = Object.values(likesData)
+    const sum = arr.reduce((a: any, b: any) => a + b, 0)
+    setSumOfLikes(sum)
+    setTimeout(() => {
+      setCalculating(false)
+    }, 500)
+  }, [likesData])
+
+  // useEffect(() => {
+  //   localStorage.setItem(
+  //     'userDataStarter',
+  //     JSON.stringify(userDataStarter)
+  //   )
+  // }, [userDataStarter])
 
   return (
     <div id={darkMode ? 'dark' : 'light'}>
@@ -47,8 +97,31 @@ export default function Home() {
       </Head>
       <main>
         <NavBar setDarkMode={setDarkMode} darkMode={darkMode} />
-        <MainPage data={data} />
+        <MainPage
+          data={data}
+          visitors={visitors}
+          likesData={likesData}
+          sumOfLikes={sumOfLikes}
+          calculating={calculating}
+          userDataStarter={userDataStarter}
+        />
       </main>
     </div>
   )
+}
+
+export const getStaticProps = async () => {
+  const response = await fetch(
+    'https://api.countapi.xyz/get/kurleys-web/profile-site'
+  ).then((res) => res.json())
+
+  const res = await fetch(
+    'https://api.countapi.xyz/update/kurleys-web/profile-site/?amount=1'
+  ).then((res) => res.json())
+
+  return {
+    props: {
+      pageViwers: response.value,
+    },
+  }
 }

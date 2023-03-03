@@ -7,33 +7,49 @@ import Post from './Post'
 
 type MainPageProps = {
   data: ProjectData
+  visitors: number
+  likesData: { id: number; likes: number }[] | any
+  sumOfLikes: number
+  calculating: boolean
+  userDataStarter: { [key: number]: number } | any
 }
-function MainPage({ data }: MainPageProps) {
-  const [visitorsCount, setVisitorsCount] = useState<number>()
-  const [fatching, setFatching] = useState<boolean>(true)
+function MainPage({
+  data,
+  visitors,
+  likesData,
+  sumOfLikes,
+  calculating,
+  userDataStarter,
+}: MainPageProps) {
   const [showMail, setShowMail] = useState<boolean>(false)
   const [focusInfoId, setFocusInfoId] = useState<number>(0)
   const [showPost, setShowPost] = useState<number>(0)
-
-  console.log({ showPost })
-
-  useEffect(() => {
-    fetchVisitors()
-    async function fetchVisitors() {
-      const response = await fetch(
-        'https://api.countapi.xyz/update/kurleys-web/profile-site/?amount=1'
-      )
-      const data = await response.json()
-      setVisitorsCount(data.value)
-    }
-    setFatching(false)
-  }, [])
+  const [postViews, setPostViews] = useState<number>(0)
 
   function handleDownloadCv() {
     window.open(
       'https://drive.google.com/file/d/1I6L5vLLvXiCS28OMaU1Tv85TrnERuBmW/view?usp=sharing'
     )
   }
+
+  useEffect(() => {
+    data.map((project) => {
+      const link = project.status.views
+
+      async function fetchViews(link: string) {
+        const response = await fetch(link)
+        const data = await response.json()
+        setPostViews((prev: any) => ({
+          ...prev,
+          [project.id]: data.value,
+        }))
+      }
+
+      fetchViews(link)
+    })
+  }, [])
+
+  // get from local storage the data of the user
 
   return (
     <div className="mainPage--container">
@@ -61,8 +77,8 @@ function MainPage({ data }: MainPageProps) {
             </div>
             <div className="bio--mid">
               <p>{data.length} projects</p>
-              <p>15 total likes</p>
-              <p>{fatching ? '...' : visitorsCount} visitors</p>
+              <p>{calculating ? '. . .' : sumOfLikes} likes</p>
+              <p>{visitors} times visited</p>
             </div>
             <div className="bio--bot">
               <h1>Yusha Kuralay</h1>
@@ -92,6 +108,8 @@ function MainPage({ data }: MainPageProps) {
             data={data}
             focusInfoId={focusInfoId}
             showPost={showPost}
+            likesData={likesData}
+            userDataStarter={userDataStarter}
           />
         )}
         <h1>Projects</h1>
@@ -101,6 +119,8 @@ function MainPage({ data }: MainPageProps) {
           setFocusInfoId={setFocusInfoId}
           focusInfoId={focusInfoId}
           setShowPost={setShowPost}
+          likesData={likesData}
+          postViews={postViews}
         />
       </div>
     </div>
