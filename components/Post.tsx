@@ -89,6 +89,14 @@ function Post({
     localStorage.setItem('userDataStarter', JSON.stringify(userData))
   }, [userData])
 
+  function handleSend(e: React.MouseEvent<HTMLButtonElement>) {
+    data.map((project) => {
+      if (project.id === showPost) {
+        navigator.clipboard.writeText(project.link)
+      }
+    })
+  }
+
   return (
     <div className="post-container">
       {data.map((project) => (
@@ -121,11 +129,7 @@ function Post({
                     <button onClick={(e) => handleLike(e)}>
                       like
                     </button>
-                    <button
-                      onClick={() => {
-                        navigator.clipboard.writeText(project.link)
-                      }}
-                    >
+                    <button onClick={(e) => handleSend(e)}>
                       {' '}
                       send{' '}
                     </button>

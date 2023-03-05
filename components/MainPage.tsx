@@ -1,5 +1,9 @@
 import ProjectPosts from './ProjectPosts'
 import countryPhoto from '../images/country-ss-1.jpg'
+import profilePhoto from '../public/images/profile-photo.jpg'
+import twitterLogo from '../public/images/twitter-logo.png'
+import linkedinLogo from '../public/images/linkedin-logo.png'
+import instagramLogo from '../public/images/instagram-logo.jpg'
 import { ProjectData } from '@/pages'
 import { useState, useEffect } from 'react'
 import SendMeMail from './SendMeMail'
@@ -54,82 +58,95 @@ function MainPage({
 
   return (
     <div className="mainPage--container">
-      {showMail ? <SendMeMail /> : null}
       <div className="mainPage--info">
-        <div className="info--details">
-          <div className="details--photo">my beautifull photo</div>
-          <div className="details--bio">
-            <div className="bio--top">
-              <h1>kuralayusha</h1>
-              <div className="bio--top--btns">
-                <button
-                  className="bio--top--btn"
-                  onClick={handleDownloadCv}
-                >
-                  download cv
-                </button>
-                <button
-                  className="bio--top--btn"
-                  onClick={() => setShowMail(!showMail)}
-                >
-                  mail
-                </button>
-              </div>
+        <div className="info--top">
+          <img
+            className="info--top--img"
+            src={profilePhoto.src}
+            alt="pp"
+          />
+          <div className="info--top--datas">
+            <div className="web--datas">
+              <h4>{data.length}</h4>
+              <span>Posts</span>
             </div>
-            <div className="bio--mid">
-              <p>{data.length} projects</p>
-              <p>{calculating ? '. . .' : sumOfLikes} likes</p>
-              <p>{visitors} times visited</p>
+            <div className="web--datas">
+              <h4>{calculating ? '. . .' : sumOfLikes}</h4>
+              <span>Likes</span>
             </div>
-            <div className="bio--bot">
-              <h1>Yusha Kuralay</h1>
-              <p>Front-end developer</p>
-              <p>React, Next.js, TypeScript, JavaScript, HTML, CSS</p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing
-                elit. Officiis ducimus, magni tempore impedit facilis
-                cupiditate aspernatur voluptatem ea quidem officia
-                voluptate, nobis, laborum culpa commodi. Et
-                accusantium debitis aliquam dolorem tenetur, pariatur
-                commodi inventore. Hic, quibusdam. Hic reiciendis
-                maiores quibusdam.
-              </p>
+            <div className="web--datas">
+              <h4>{visitors}</h4>
+              <span>Visitors</span>
             </div>
           </div>
+        </div>
+        <div className="info--bio">
+          <h1>Yusha Kuralay</h1>
+          <h2>Front-end developer</h2>
+          <h2>HTML, CSS, JavaScript, React, TypeScript, Next.js</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Officiis ducimus, magni tempore impedit facilis cupiditate
+            aspernatur voluptatem ea quidem officia voluptate, nobis,
+            laborum culpa commodi. Et accusantium debitis aliquam
+            dolorem tenetur, pariatur commodi inventore. Hic,
+            quibusdam. Hic reiciendis maiores quibusdam.
+          </p>
+        </div>
+        <div className="info--btns">
+          <button
+            className="info--btns--btn blue"
+            onClick={handleDownloadCv}
+          >
+            Download CV
+          </button>
+          <button
+            className="info--btns--btn grey"
+            onClick={() => setShowMail(!showMail)}
+          >
+            Contact Me
+          </button>
         </div>
         <div className="info--socials">
           <Link
             href="https://twitter.com/agresifcCcsage"
             target={'_blank'}
           >
-            <button className="social--btn">twitter</button>
+            <div className="social--btn--cover">
+              <img
+                src={twitterLogo.src}
+                alt="twitter"
+                className="social--btn"
+              />
+            </div>
           </Link>
           <Link
             href="https://www.instagram.com/kuralayusha/?igshid=ZDdkNTZiNTM%3D"
             target={'_blank'}
           >
-            <button className="social--btn">instagram</button>
+            <div className="social--btn--cover">
+              <img
+                src={instagramLogo.src}
+                alt="instagram"
+                className="social--btn"
+              />
+            </div>
           </Link>
           <Link
             href="https://www.linkedin.com/in/yusha-kuralay-6abb161b0/"
             target={'_blank'}
           >
-            <button className="social--btn">linkedIn</button>
+            <div className="social--btn--cover">
+              <img
+                src={linkedinLogo.src}
+                alt="linkedin"
+                className="social--btn"
+              />
+            </div>
           </Link>
         </div>
       </div>
       <div className="mainPage--posts">
-        {showPost > 0 && (
-          <Post
-            data={data}
-            focusInfoId={focusInfoId}
-            showPost={showPost}
-            likesData={likesData}
-            userDataStarter={userDataStarter}
-          />
-        )}
-        <h1>Projects</h1>
-
         <ProjectPosts
           data={data}
           setFocusInfoId={setFocusInfoId}
@@ -139,6 +156,16 @@ function MainPage({
           postViews={postViews}
         />
       </div>
+      {showPost > 0 && (
+        <Post
+          data={data}
+          focusInfoId={focusInfoId}
+          showPost={showPost}
+          likesData={likesData}
+          userDataStarter={userDataStarter}
+        />
+      )}
+      {showMail ? <SendMeMail /> : null}
     </div>
   )
 }

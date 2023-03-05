@@ -10,7 +10,7 @@ function NavBar({ setDarkMode, darkMode }: NavBarProps) {
 
   return (
     <div className="navBar">
-      <h1>Kurleygram</h1>
+      <h1>kuralayusha</h1>
       <button onClick={handleDarkMode}>
         {darkMode ? 'Light Mode' : 'Dark Mode'}
       </button>
