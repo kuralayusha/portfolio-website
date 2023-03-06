@@ -165,7 +165,7 @@ function MainPage({
           userDataStarter={userDataStarter}
         />
       )}
-      {showMail ? <SendMeMail /> : null}
+      {showMail ? <SendMeMail setShowMail={setShowMail} /> : null}
     </div>
   )
 }

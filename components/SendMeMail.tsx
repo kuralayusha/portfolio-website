@@ -1,7 +1,11 @@
 import React, { useRef } from 'react'
 import emailjs from '@emailjs/browser'
 
-function SendMeMail() {
+type SendMeMailProps = {
+  setShowMail: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+function SendMeMail({ setShowMail }: SendMeMailProps) {
   const form = useRef<HTMLFormElement | null>(null)
 
   const sendEmail = (e: React.ChangeEvent<any>) => {
@@ -27,29 +31,51 @@ function SendMeMail() {
       )
     e.target.reset()
   }
+
+  function handleGoBack() {
+    setShowMail(false)
+  }
   return (
-    <div>
+    <div className="send--email--container">
+      <button className="go--back" onClick={handleGoBack}>
+        ---
+      </button>
       <form ref={form} onSubmit={sendEmail}>
-        <input
-          type="text"
-          placeholder="Name"
-          name="user_name"
-          required
-        />
-        <input
-          type="email"
-          placeholder="exemple@email.com"
-          name="user_email"
-          required
-        />
-        <input
-          type="Text"
-          placeholder="Subject"
-          name="subject"
-          required
-        />
-        <textarea name="message"></textarea>
-        <button type="submit">Send Mail</button>{' '}
+        <div className="inputs--area">
+          <input
+            className="mail--inputs"
+            type="text"
+            placeholder="Your Name"
+            name="user_name"
+            required
+            autoComplete="off"
+          />
+          <input
+            className="mail--inputs"
+            type="email"
+            placeholder="exemple@email.com"
+            name="user_email"
+            required
+            autoComplete="off"
+          />
+          <input
+            className="mail--inputs"
+            type="Text"
+            placeholder="Subject"
+            name="subject"
+            required
+            autoComplete="off"
+          />
+          <textarea
+            className="mail--inputs message"
+            placeholder="Your message"
+            name="message"
+            aria-setsize={50}
+            required
+            autoComplete="off"
+          />
+          <button type="submit">Send</button>
+        </div>
       </form>
     </div>
   )
