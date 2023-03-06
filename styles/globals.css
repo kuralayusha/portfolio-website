@@ -8,16 +8,14 @@
 
 .navBar {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    height: 40px;
-
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-
     padding: 0 12px 0 12px;
-
+    height: 40px;
 }
 
 .navBar h1 {
@@ -38,6 +36,12 @@
 #light .navBar {
     background-color: #fff;
     color: #000;
+}
+
+.modeIcon {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
 }
 
 .mainPage--container {
@@ -422,6 +426,7 @@
 .post--technologys span {
     margin-right: 10px;
 }
+
 
 
 
