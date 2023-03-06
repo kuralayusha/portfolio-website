@@ -4,6 +4,7 @@ import profilePhoto from '../public/images/profile-photo.jpg'
 import twitterLogo from '../public/images/twitter-logo.png'
 import linkedinLogo from '../public/images/linkedin-logo.png'
 import instagramLogo from '../public/images/instagram-logo.jpg'
+import githubLogo from '../public/images/github-logo.png'
 import { ProjectData } from '@/pages'
 import { useState, useEffect } from 'react'
 import SendMeMail from './SendMeMail'
@@ -123,6 +124,30 @@ function MainPage({
         </div>
         <div className="info--socials">
           <Link
+            href="https://github.com/kuralayusha"
+            target={'_blank'}
+          >
+            <div className="social--btn--cover">
+              <img
+                src={githubLogo.src}
+                alt="github"
+                className="social--btn"
+              />
+            </div>
+          </Link>
+          <Link
+            href="https://www.linkedin.com/in/yusha-kuralay-6abb161b0/"
+            target={'_blank'}
+          >
+            <div className="social--btn--cover">
+              <img
+                src={linkedinLogo.src}
+                alt="linkedin"
+                className="social--btn"
+              />
+            </div>
+          </Link>
+          <Link
             href="https://twitter.com/agresifcCcsage"
             target={'_blank'}
           >
@@ -142,18 +167,6 @@ function MainPage({
               <img
                 src={instagramLogo.src}
                 alt="instagram"
-                className="social--btn"
-              />
-            </div>
-          </Link>
-          <Link
-            href="https://www.linkedin.com/in/yusha-kuralay-6abb161b0/"
-            target={'_blank'}
-          >
-            <div className="social--btn--cover">
-              <img
-                src={linkedinLogo.src}
-                alt="linkedin"
                 className="social--btn"
               />
             </div>
