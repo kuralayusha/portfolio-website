@@ -97,6 +97,7 @@ export default function Home(props: { pageViwers: number }) {
           sumOfLikes={sumOfLikes}
           calculating={calculating}
           userDataStarter={userDataStarter}
+          darkMode={darkMode}
         />
       </main>
     </div>

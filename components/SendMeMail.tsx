@@ -1,11 +1,14 @@
 import React, { useRef } from 'react'
 import emailjs from '@emailjs/browser'
+import closeDark from '../public/icons/close-for-dark.svg'
+import closeLight from '../public/icons/close-for-light.svg'
 
 type SendMeMailProps = {
   setShowMail: React.Dispatch<React.SetStateAction<boolean>>
+  darkMode: boolean
 }
 
-function SendMeMail({ setShowMail }: SendMeMailProps) {
+function SendMeMail({ setShowMail, darkMode }: SendMeMailProps) {
   const form = useRef<HTMLFormElement | null>(null)
 
   const sendEmail = (e: React.ChangeEvent<any>) => {
@@ -38,7 +41,11 @@ function SendMeMail({ setShowMail }: SendMeMailProps) {
   return (
     <div className="send--email--container">
       <button className="go--back" onClick={handleGoBack}>
-        ---
+        <img
+          className="close--icon"
+          src={darkMode ? closeDark.src : closeLight.src}
+          alt="close"
+        />
       </button>
       <form ref={form} onSubmit={sendEmail}>
         <div className="inputs--area">

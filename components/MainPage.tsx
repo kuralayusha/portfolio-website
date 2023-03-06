@@ -19,6 +19,7 @@ type MainPageProps = {
   sumOfLikes: number
   calculating: boolean
   userDataStarter: { [key: number]: number } | any
+  darkMode: boolean
 }
 function MainPage({
   data,
@@ -27,6 +28,7 @@ function MainPage({
   sumOfLikes,
   calculating,
   userDataStarter,
+  darkMode,
 }: MainPageProps) {
   const [showMail, setShowMail] = useState<boolean>(false)
   const [focusInfoId, setFocusInfoId] = useState<number>(0)
@@ -194,7 +196,9 @@ function MainPage({
           projectPhotos={projectPhotos}
         />
       )}
-      {showMail ? <SendMeMail setShowMail={setShowMail} /> : null}
+      {showMail ? (
+        <SendMeMail setShowMail={setShowMail} darkMode={darkMode} />
+      ) : null}
     </div>
   )
 }
