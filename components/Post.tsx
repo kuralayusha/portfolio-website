@@ -1,6 +1,8 @@
 import { ProjectData } from '@/pages'
 import { useEffect, useState } from 'react'
 import { render } from 'react-dom'
+import countrySs from '@/public/images/country-ss-1.jpg'
+import profilePhoto from '@/public/images/profile-photo.jpg'
 
 type PostProps = {
   data: ProjectData
@@ -8,6 +10,8 @@ type PostProps = {
   showPost: number
   likesData: { id: number; likes: number }[] | any
   userDataStarter: { [key: number]: { liked: boolean } } | any
+  setShowPost: (id: number) => void
+  projectPhotos: any
 }
 
 function Post({
@@ -16,10 +20,13 @@ function Post({
   showPost,
   likesData,
   userDataStarter,
+  setShowPost,
+  projectPhotos,
 }: PostProps) {
   const [userData, setUserData] = useState<any>()
   const [renderLikes, setRenderLikes] = useState<number>()
   const [newUserData, setNewUserData] = useState<any>()
+  const [currentSlide, setCurrentSlide] = useState<number>(0)
 
   useEffect(() => {
     data.map((project) => {
@@ -33,23 +40,23 @@ function Post({
     setUserData(userDataStarter)
   }, [])
 
-  console.log({ userData })
-  console.log(userDataStarter)
+  // console.log({ userData })
+  // console.log(userDataStarter)
 
   function handleLike(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault()
 
     if (!userData[showPost].liked) {
-      console.log('liked')
+      // console.log('liked')
       data.map((project) => {
         if (project.id === showPost) {
           const link = project.status.increaseLikes
-          console.log(link)
+          // console.log(link)
 
           fetch(link)
             .then((response) => response.json())
             .then((data) => {
-              console.log(data)
+              // console.log(data)
               setRenderLikes(data.value)
             })
 
@@ -62,16 +69,16 @@ function Post({
         }
       })
     } else {
-      console.log('unlike')
+      // console.log('unlike')
       data.map((project) => {
         if (project.id === showPost) {
           const link = project.status.decreaseLikes
-          console.log(link)
+          // console.log(link)
 
           fetch(link)
             .then((response) => response.json())
             .then((data) => {
-              console.log(data)
+              // console.log(data)
               setRenderLikes(data.value)
             })
           setUserData({
@@ -97,35 +104,57 @@ function Post({
     })
   }
 
+  function handleGoBack() {
+    setShowPost(0)
+  }
+
+  function handleSliderIncrease() {
+    if (currentSlide < projectPhotos.length - 1) {
+      setCurrentSlide(currentSlide + 1)
+    } else {
+      setCurrentSlide(0)
+    }
+  }
+
+  function handleSliderDecrease() {
+    if (currentSlide > 0) {
+      setCurrentSlide(currentSlide - 1)
+    } else {
+      setCurrentSlide(projectPhotos.length - 1)
+    }
+  }
+
   return (
-    <div className="post-container">
+    <div className="post--page">
+      <div className="post--bar">
+        <img src={profilePhoto.src} alt="" onClick={handleGoBack} />
+        <h1 onClick={handleGoBack}>kurleyusha</h1>
+      </div>
       {data.map((project) => (
-        <div key={project.id}>
+        <div key={project.id} className="one">
           {showPost === project.id && (
-            <div>
-              {project.image.map((image) => (
-                <img
-                  className="post-picture"
-                  key={image}
-                  src={image}
-                  alt=""
-                />
-              ))}
-              <div>
-                <div>kuralayusha</div>
-                <div>
-                  <p>
-                    kuralayusha This is the {project.name} project.{' '}
-                    {project.description}
-                  </p>
-                </div>
-                <div>
-                  {project.technologies.map((technology) => (
-                    <div key={technology}>{technology}</div>
-                  ))}
-                </div>
-                <div>
-                  <div>
+            <div className="post--container">
+              <img
+                src={projectPhotos[currentSlide]}
+                alt="post photo"
+                className="post--photo"
+              />
+              <button
+                className="slider--btn left"
+                onClick={handleSliderDecrease}
+              >
+                L
+              </button>
+              <button
+                className="slider--btn right"
+                onClick={handleSliderIncrease}
+              >
+                R
+              </button>
+
+              <div className="post--details">
+                <div className="post--buttons">
+                  <div className="post--buttons--l&s">
                     <button onClick={(e) => handleLike(e)}>
                       like
                     </button>
@@ -134,7 +163,33 @@ function Post({
                       send{' '}
                     </button>
                   </div>
-                  <p>{renderLikes} likes</p>
+                  <div className="post--counter">
+                    {projectPhotos.map(
+                      (photo: any, index: number) => (
+                        <div
+                          key={index}
+                          className={`post--photo--slider ${
+                            currentSlide === index ? 'active' : ''
+                          }`}
+                        ></div>
+                      )
+                    )}
+                  </div>
+                  <div className="post--buttons--g&v">
+                    <button>go to github</button>
+                    <button>visit website</button>
+                  </div>
+                </div>
+                <p className="post--likes">{renderLikes} likes</p>
+                <p className="post--definition">
+                  <span>kurleyusha</span> This is the{' '}
+                  <span>{project.name}</span> project.{' '}
+                  {project.description}
+                </p>
+                <div className="post--technologys">
+                  {project.technologies.map((technology) => (
+                    <span key={technology}>#{technology}</span>
+                  ))}
                 </div>
               </div>
             </div>

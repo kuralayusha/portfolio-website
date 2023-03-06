@@ -9,6 +9,7 @@ import { useState, useEffect } from 'react'
 import SendMeMail from './SendMeMail'
 import Post from './Post'
 import Link from 'next/link'
+import { equal } from 'assert'
 
 type MainPageProps = {
   data: ProjectData
@@ -30,6 +31,7 @@ function MainPage({
   const [focusInfoId, setFocusInfoId] = useState<number>(0)
   const [showPost, setShowPost] = useState<number>(0)
   const [postViews, setPostViews] = useState<number>(0)
+  const [projectPhotos, setProjectPhotos] = useState<any>([])
 
   function handleDownloadCv() {
     window.open(
@@ -54,7 +56,19 @@ function MainPage({
     })
   }, [])
 
-  // get from local storage the data of the user
+  // in this useEffect map the data and if showPost equals to project.id then set the image to the projectPhotos state if showPost equals to 0 then set the projectPhotos state to empty array
+  useEffect(() => {
+    data.map((project) => {
+      if (showPost === project.id) {
+        setProjectPhotos(project.image)
+      } else if (showPost === 0) {
+        setProjectPhotos([])
+      }
+    })
+  }, [showPost])
+
+  console.log({ projectPhotos })
+  console.log({ showPost })
 
   return (
     <div className="mainPage--container">
@@ -163,6 +177,8 @@ function MainPage({
           showPost={showPost}
           likesData={likesData}
           userDataStarter={userDataStarter}
+          setShowPost={setShowPost}
+          projectPhotos={projectPhotos}
         />
       )}
       {showMail ? <SendMeMail setShowMail={setShowMail} /> : null}

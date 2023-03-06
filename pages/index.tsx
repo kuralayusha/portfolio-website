@@ -63,7 +63,7 @@ export default function Home(props: { pageViwers: number }) {
       })
     }
   }, [])
-  console.log({ userDataStarter })
+  // console.log({ userDataStarter })
 
   useEffect(() => {
     const arr = Object.values(likesData)

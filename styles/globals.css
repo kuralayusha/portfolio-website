@@ -280,6 +280,151 @@
     background-color: #1e8fffc4;
 }
 
+.post--page {
+    background-color: #ffffff;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+}
+
+.post--bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.post--bar img {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 56px;
+    margin-left: 15px;
+}
+
+.post--bar h1 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: lowercase;
+    color: #262626;
+    margin-left: 16px;
+}
+
+/* .one{
+    background-color: #00000059;
+} */
+
+.post--container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+}
+
+.slider--btn {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-color: #000000;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 100%;
+}
+
+.slider--btn.right {
+    right: 0;
+    margin-top: 45%;
+    translate: translateY(-50%);
+}
+
+.slider--btn.left {
+    left: 0;
+    margin-top: 45%;
+    translate: translateY(-50%);
+}
+
+.post--photo {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 95vw;
+}
+
+.post--details {
+    padding: 10px 12px 0 12px;
+}
+
+.post--buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post--counter {
+    display: flex;
+}
+
+.post--photo--slider {
+    width: 5px;
+    height: 5px;
+    margin : 1px;
+    background-color: #6E6E6E;
+    border-radius: 100%;
+    border: none;
+}
+
+.post--photo--slider.active {
+    background-color: #1E90FF;
+}
+
+.post--likes {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: lowercase;
+    color: #262626;
+    margin-top: 18px;
+}
+
+.post--definition {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #262626;
+}
+
+.post--definition span {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    color: #262626;
+}
+
+.post--technologys {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: #004C8B;
+    margin-top: 4px;
+    text-decoration: underline;
+}
+
+.post--technologys span {
+    margin-right: 10px;
+}
+
+
+
 
 
 

@@ -20,7 +20,6 @@ function ShowPostInfo({
     <div className="post-entry-info">
       {data.map((project) => (
         <div key={project.id}>
-          {/* here should be print the likesDatas value if the project.id is equal to likesData.id */}
           {project.id === focusInfoId && (
             <div className="post-entry-info--likes">
               <p>{likesData[project.id]} likes</p>
