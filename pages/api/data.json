@@ -90,7 +90,6 @@
       "/images/rps-ss-2.jpg",
       "/images/rps-ss-3.jpg"
     ],
-
     "description": "A simple rps game",
     "link": "https://mellifluous-caramel-c4234f.netlify.app",
     "technologies": ["React", "TypeScript", "API"],

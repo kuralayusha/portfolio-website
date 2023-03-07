@@ -6,6 +6,8 @@
     box-sizing: border-box;
 }
 
+/*----------------------------- NAV BAR ------------------------------ */
+
 .navBar {
     display: flex;
     justify-content: space-between;
@@ -43,6 +45,12 @@
     height: 20px;
     margin-right: 12px;
 }
+
+.modeIcon.hide {
+    display: none;
+}
+
+/*----------------------------- MAIN PAGE ---------------------------- */
 
 .mainPage--container {
     margin-top: 40px;
@@ -200,6 +208,8 @@
     margin-right: 9px;
 }
 
+/*------------------------ MAIN PAGE POSTS ------------------------ */
+
 .posts--project {
     display: grid;
     gap: 1px;
@@ -218,6 +228,8 @@
     width: 32vw;
     height: 32vw;
 }
+
+/*------------------------------ SEND MAİL-------------------- */
 
 .send--email--container {
     background-color: #ffffff;
@@ -298,6 +310,8 @@
     background-color: #1e8fffc4;
 }
 
+/*--------------------------------- POST PAGE -------------------------------- */
+
 .post--page {
     background-color: #ffffff;
     position: fixed;
@@ -332,10 +346,6 @@
     margin-left: 16px;
 }
 
-/* .one{
-    background-color: #00000059;
-} */
-
 .post--container {
     display: flex;
     flex-direction: column;
@@ -345,11 +355,14 @@
 }
 
 .slider--btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     border: none;
-    background-color: #000000;
+    background-color: #00000067;
     color: #fff;
     cursor: pointer;
     border-radius: 100%;
@@ -359,6 +372,7 @@
     right: 0;
     margin-top: 45%;
     translate: translateY(-50%);
+    transform: rotateZ(180deg);
 }
 
 .slider--btn.left {
@@ -382,6 +396,26 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.post--buttons button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+.post--btns.one {
+    margin-left: 12px;
+}
+.post--btns.two {
+    margin-right: 12px;
+}
+
+.post--btns {
+    width: 30px;
+    height: 30px;
 }
 
 .post--counter {

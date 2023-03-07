@@ -9,6 +9,8 @@ type ProjectPostsProps = {
   setShowPost: React.Dispatch<React.SetStateAction<number>>
   likesData: { id: number; likes: number }[] | any
   postViews: { [key: number]: number } | any
+  setR: React.Dispatch<React.SetStateAction<boolean>>
+  r: boolean
 }
 
 function ProjectPosts({
@@ -18,6 +20,8 @@ function ProjectPosts({
   setShowPost,
   likesData,
   postViews,
+  setR,
+  r,
 }: ProjectPostsProps) {
   function handleMouseOver(e: React.MouseEvent<HTMLDivElement>) {
     const id = parseInt(e.currentTarget.id)
@@ -45,6 +49,7 @@ function ProjectPosts({
 
   return (
     <div className="posts--project">
+      {r}
       {data.map((project) => (
         <div
           className="project--card"

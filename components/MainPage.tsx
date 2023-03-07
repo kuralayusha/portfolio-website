@@ -19,7 +19,9 @@ type MainPageProps = {
   sumOfLikes: number
   calculating: boolean
   userDataStarter: { [key: number]: number } | any
-  darkMode: boolean
+  darkMode: any
+  setR: any
+  r: any
 }
 function MainPage({
   data,
@@ -29,12 +31,39 @@ function MainPage({
   calculating,
   userDataStarter,
   darkMode,
+  setR,
+  r,
 }: MainPageProps) {
   const [showMail, setShowMail] = useState<boolean>(false)
   const [focusInfoId, setFocusInfoId] = useState<number>(0)
   const [showPost, setShowPost] = useState<number>(0)
   const [postViews, setPostViews] = useState<number>(0)
   const [projectPhotos, setProjectPhotos] = useState<any>([])
+  const [likes, setLikes] = useState<any>()
+
+  useEffect(() => {
+    // Local storage'dan beğeni durumunu çekiyoruz
+    const storedLikes = localStorage.getItem('likes')
+    console.log('likes a baktim ', storedLikes)
+
+    if (storedLikes) {
+      console.log('doluymuş çektim', likes)
+      setLikes(JSON.parse(storedLikes))
+    } else {
+      console.log('boşmuş', likes)
+      // Local storage'da beğeni durumu yoksa, her bir proje id si için beğeni kısmı false olan bir obje oluşturuyoruz
+      data.map((project) => {
+        console.log('setting the data')
+        setLikes((prev: any) => ({
+          ...prev,
+          [project.id]: {
+            liked: false,
+          },
+        }))
+      })
+      console.log('olusturdum', likes)
+    }
+  }, [])
 
   function handleDownloadCv() {
     window.open(
@@ -57,7 +86,9 @@ function MainPage({
 
       fetchViews(link)
     })
-  }, [])
+  }, [likes])
+
+  // console.log({ postViews })
 
   // in this useEffect map the data and if showPost equals to project.id then set the image to the projectPhotos state if showPost equals to 0 then set the projectPhotos state to empty array
   useEffect(() => {
@@ -70,11 +101,12 @@ function MainPage({
     })
   }, [showPost])
 
-  console.log({ projectPhotos })
-  console.log({ showPost })
+  // console.log({ projectPhotos })
+  // console.log({ showPost })
 
   return (
     <div className="mainPage--container">
+      {r}
       <div className="mainPage--info">
         <div className="info--top">
           <img
@@ -183,6 +215,8 @@ function MainPage({
           setShowPost={setShowPost}
           likesData={likesData}
           postViews={postViews}
+          setR={setR}
+          r={r}
         />
       </div>
       {showPost > 0 && (
@@ -194,6 +228,11 @@ function MainPage({
           userDataStarter={userDataStarter}
           setShowPost={setShowPost}
           projectPhotos={projectPhotos}
+          darkMode={darkMode}
+          likes={likes}
+          setLikes={setLikes}
+          setR={setR}
+          r={r}
         />
       )}
       {showMail ? (

@@ -23,13 +23,24 @@ export type ProjectData = {
 }[]
 
 export default function Home(props: { pageViwers: number }) {
-  const [darkMode, setDarkMode] = useState<boolean>(false)
+  const [darkMode, setDarkMode] = useState<boolean | null>()
   const [data, setData] = useState(projectsData)
   const [visitors, setVisitors] = useState<number>(props.pageViwers)
   const [likesData, setLikesData] = useState<any>({})
   const [sumOfLikes, setSumOfLikes] = useState<any>()
   const [calculating, setCalculating] = useState<boolean>(true)
   const [userDataStarter, setUserDataStarter] = useState<any>({})
+  const [r, setR] = useState<boolean>(false)
+
+  useEffect(() => {
+    const darkMode = localStorage.getItem('theme')
+    if (darkMode === null) {
+      localStorage.setItem('theme', 'false')
+      setDarkMode(false)
+    } else {
+      setDarkMode(JSON.parse(darkMode))
+    }
+  }, [])
 
   useEffect(() => {
     data.map((project) => {
@@ -44,26 +55,9 @@ export default function Home(props: { pageViwers: number }) {
         }))
       }
     })
-    const userStarterData = localStorage.getItem('userDataStarter')
-    if (userStarterData === null) {
-      setingUserData()
-    } else {
-      setUserDataStarter(JSON.parse(userStarterData))
-    }
+  }, [r])
 
-    function setingUserData() {
-      data.map((project) => {
-        console.log('setting the data')
-        setUserDataStarter((prev: any) => ({
-          ...prev,
-          [project.id]: {
-            liked: false,
-          },
-        }))
-      })
-    }
-  }, [])
-  // console.log({ userDataStarter })
+  console.log({ likesData })
 
   useEffect(() => {
     const arr = Object.values(likesData)
@@ -71,7 +65,7 @@ export default function Home(props: { pageViwers: number }) {
     setSumOfLikes(sum)
     setTimeout(() => {
       setCalculating(false)
-    }, 500)
+    }, 600)
   }, [likesData])
 
   return (
@@ -98,6 +92,8 @@ export default function Home(props: { pageViwers: number }) {
           calculating={calculating}
           userDataStarter={userDataStarter}
           darkMode={darkMode}
+          setR={setR}
+          r={r}
         />
       </main>
     </div>
