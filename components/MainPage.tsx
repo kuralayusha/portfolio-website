@@ -40,6 +40,7 @@ function MainPage({
   const [postViews, setPostViews] = useState<number>(0)
   const [projectPhotos, setProjectPhotos] = useState<any>([])
   const [likes, setLikes] = useState<any>()
+  const [seeMore, setSeeMore] = useState<boolean>(false)
 
   useEffect(() => {
     // Local storage'dan beğeni durumunu çekiyoruz
@@ -104,6 +105,10 @@ function MainPage({
   // console.log({ projectPhotos })
   // console.log({ showPost })
 
+  function handleSeeMore() {
+    setSeeMore(!seeMore)
+  }
+
   return (
     <div className="mainPage--container">
       {r}
@@ -134,12 +139,22 @@ function MainPage({
           <h2>Front-end developer</h2>
           <h2>HTML, CSS, JavaScript, React, TypeScript, Next.js</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Lorem ipsum dolor sit amet, consectetur adipisicing
             Officiis ducimus, magni tempore impedit facilis cupiditate
-            aspernatur voluptatem ea quidem officia voluptate, nobis,
-            laborum culpa commodi. Et accusantium debitis aliquam
-            dolorem tenetur, pariatur commodi inventore. Hic,
-            quibusdam. Hic reiciendis maiores quibusdam.
+            aspernatur voluptatem ea quidem officia
+            <span className={seeMore ? 'see--less' : 'see--more'}>
+              ...
+            </span>
+            <span className={seeMore ? 'see--more' : 'see--less'}>
+              {' '}
+              voluptate, nobis, laborum culpa commodi. Et accusantium
+              debitis aliquam dolorem tenetur, pariatur commodi
+              inventore. Hic, quibusdam. Hic reiciendis maiores
+              quibusdam.
+            </span>
+            <span className="see--btn" onClick={handleSeeMore}>
+              {seeMore ? ' less' : ' more'}
+            </span>
           </p>
         </div>
         <div className="info--btns">

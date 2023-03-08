@@ -195,6 +195,24 @@ main {
     margin-top: 3px;
 }
 
+.see--less {
+    display: none;
+}
+
+.see--more {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    /* color: #000000; */
+    margin-top: 3px;
+}
+
+.see--btn {
+    color: #6E6E6E;
+    cursor: pointer;
+}
+
 #dark .info--bio p {
     color: #fff;
 }
