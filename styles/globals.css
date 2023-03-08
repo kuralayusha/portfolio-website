@@ -317,10 +317,19 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #fff;
     border: none;
     margin-top: 15px;
+    background-color: #000000;
 }
+
+#dark .go--back {
+    background-color: #000000;
+}
+
+#light .go--back {
+    background-color: #fff;
+}
+
 
 .close--icon {
     width: 30px;

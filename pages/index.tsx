@@ -1,3 +1,12 @@
+// TODOS: dark mode mail closer icon
+// copy to clipboard alert
+// data fix {
+//  fotos fix
+//  links fix
+//  descriptions
+//  }
+// add text under the socials
+
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
 
