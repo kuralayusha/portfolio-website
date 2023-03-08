@@ -160,6 +160,7 @@ function MainPage({
           <Link
             href="https://github.com/kuralayusha"
             target={'_blank'}
+            className="social--btn--txt"
           >
             <div className="social--btn--cover">
               <img
@@ -168,6 +169,7 @@ function MainPage({
                 className="social--btn"
               />
             </div>
+            <p>GitHub</p>
           </Link>
           <Link
             href="https://www.linkedin.com/in/yusha-kuralay-6abb161b0/"
@@ -180,6 +182,7 @@ function MainPage({
                 className="social--btn"
               />
             </div>
+            <p>LinkedIn</p>
           </Link>
           <Link
             href="https://twitter.com/agresifcCcsage"
@@ -192,6 +195,7 @@ function MainPage({
                 className="social--btn"
               />
             </div>
+            <p>Twitter</p>
           </Link>
           <Link
             href="https://www.instagram.com/kuralayusha/?igshid=ZDdkNTZiNTM%3D"
@@ -204,6 +208,7 @@ function MainPage({
                 className="social--btn"
               />
             </div>
+            <p>Instagram</p>
           </Link>
         </div>
       </div>

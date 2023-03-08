@@ -246,6 +246,30 @@ main {
     padding: 0 12px 0 12px;
 }
 
+.info--socials a {
+    text-decoration: none;
+    margin-right: 21px;
+}
+
+.info--socials p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    letter-spacing: -0.408px;
+    margin-top: 4px;
+    /* margin-right: 11px; */
+}
+
+#dark .info--socials p {
+    color: #fff;
+}
+
+#light .info--socials p {
+    color: #000;
+}
+
 .social--btn {
     width: 52px;
     height: 52px;
@@ -259,7 +283,7 @@ main {
     width: 60px;
     height: 60px;
     border-radius: 100%;
-    margin-right: 9px;
+    /* margin-right: 9px; */
 }
 
 #dark .social--btn--cover {
