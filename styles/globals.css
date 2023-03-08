@@ -261,12 +261,16 @@ main {
 .info--socials {
     display: flex;
     flex-direction: row;
-    padding: 0 12px 0 12px;
+    justify-content: space-around;
+    /* padding: 0 12px 0 12px; */
+}
+
+.last {
+    margin-right: 0;
 }
 
 .info--socials a {
     text-decoration: none;
-    margin-right: 21px;
 }
 
 .info--socials p {

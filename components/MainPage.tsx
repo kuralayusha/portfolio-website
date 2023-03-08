@@ -223,7 +223,7 @@ function MainPage({
                 className="social--btn"
               />
             </div>
-            <p>Instagram</p>
+            <p className="last">Instagram</p>
           </Link>
         </div>
       </div>
