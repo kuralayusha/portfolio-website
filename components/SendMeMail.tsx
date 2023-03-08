@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import emailjs from '@emailjs/browser'
-import closeDark from '../public/icons/close-for-dark.svg'
-import closeLight from '../public/icons/close-for-light.svg'
+import closeDark from '../public/icons/close-dark.svg'
+import closeLight from '../public/icons/close-light.svg'
 
 type SendMeMailProps = {
   setShowMail: React.Dispatch<React.SetStateAction<boolean>>

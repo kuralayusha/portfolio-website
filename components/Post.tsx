@@ -1,6 +1,7 @@
 import { ProjectData } from '@/pages'
 import { useEffect, useState } from 'react'
 import { render } from 'react-dom'
+import Link from 'next/link'
 import countrySs from '@/public/images/country-ss-1.jpg'
 import profilePhoto from '@/public/images/profile-photo.jpg'
 
@@ -9,7 +10,8 @@ import arrowLight from '@/public/icons/arrow-light.svg'
 import emptyWhiteHeart from '@/public/icons/unlike-for-light.svg'
 import emptyBlackHeart from '@/public/icons/unlike-for-dark.svg'
 import redHeart from '@/public/icons/red-like.svg'
-import copyLink from '@/public/icons/copy-link.svg'
+import copyLight from '@/public/icons/copy-light.svg'
+import copyDark from '@/public/icons/copy-Dark.svg'
 import githubDark from '@/public/icons/github-for-dark.svg'
 import githubLight from '@/public/icons/github.svg'
 import shareLight from '@/public/icons/share-for-light.svg'
@@ -167,11 +169,13 @@ function Post({
         <div key={project.id} className="one">
           {showPost === project.id && (
             <div className="post--container">
-              <img
-                src={projectPhotos[currentSlide]}
-                alt="post photo"
-                className="post--photo"
-              />
+              <Link href={project.link} target={'_blank'}>
+                <img
+                  src={projectPhotos[currentSlide]}
+                  alt="post photo"
+                  className="post--photo"
+                />
+              </Link>
               <img
                 className="slider--btn left"
                 onClick={handleSliderDecrease}
@@ -210,9 +214,7 @@ function Post({
                     <button onClick={(e) => handleSend(e)}>
                       <img
                         className="post--btns one"
-                        src={
-                          darkMode ? shareLight.src : shareLight.src
-                        }
+                        src={darkMode ? copyDark.src : copyLight.src}
                         alt="copy link"
                       />
                     </button>
@@ -231,20 +233,26 @@ function Post({
                   </div>
                   <div className="post--buttons--gv">
                     <button>
-                      <img
-                        className="post--btns two"
-                        src={
-                          darkMode ? githubDark.src : githubLight.src
-                        }
-                        alt="github"
-                      />
+                      <Link href={project.link} target={'_blank'}>
+                        <img
+                          className="post--btns two"
+                          src={
+                            darkMode
+                              ? githubDark.src
+                              : githubLight.src
+                          }
+                          alt="github"
+                        />
+                      </Link>
                     </button>
                     <button>
-                      <img
-                        className="post--btns"
-                        src={darkMode ? webDark.src : webLight.src}
-                        alt="website"
-                      />
+                      <Link href={project.link} target={'_blank'}>
+                        <img
+                          className="post--btns"
+                          src={darkMode ? webDark.src : webLight.src}
+                          alt="website"
+                        />
+                      </Link>
                     </button>
                   </div>
                 </div>

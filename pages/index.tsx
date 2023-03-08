@@ -69,7 +69,7 @@ export default function Home(props: { pageViwers: number }) {
   }, [likesData])
 
   return (
-    <div id={darkMode ? 'dark' : 'light'}>
+    <div id={darkMode ? 'dark' : 'light'} className="container">
       <Head>
         <title>KuralaYusha</title>
         <meta
