@@ -3,7 +3,7 @@
 // data fix
 // add text under the socials [done]
 // maybe add a intro signiture
-// add see more see less buttons to descriptions
+// add see more see less buttons to descriptions [done]
 
 import Head from 'next/head'
 import { useEffect, useState } from 'react'

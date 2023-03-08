@@ -547,6 +547,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .post--buttons button {
@@ -567,6 +568,20 @@ main {
 .post--btns {
     width: 30px;
     height: 30px;
+}
+
+.copy--alert {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 25px;
+    background-color: #000000c7;
+    color: #fff;
+    border-radius: 0 5px 5px 5px;
+    position: absolute;  
+    top: 30px;  
+    left: 67px;
 }
 
 .post--counter {

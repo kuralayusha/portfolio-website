@@ -51,6 +51,7 @@ function Post({
   const [showLike, setShowLike] = useState<any>()
   const [likeLinkInc, setLikeLinkInc] = useState<any>()
   const [likeLinkDec, setLikeLinkDec] = useState<any>()
+  const [copyAlert, setCopyAlert] = useState<boolean>(false)
 
   useEffect(() => {
     localStorage.setItem('likes', JSON.stringify(likes))
@@ -133,6 +134,12 @@ function Post({
         navigator.clipboard.writeText(project.link)
       }
     })
+
+    setCopyAlert(true)
+
+    setTimeout(() => {
+      setCopyAlert(false)
+    }, 1500)
   }
 
   function handleGoBack() {
@@ -215,6 +222,13 @@ function Post({
                         alt="copy link"
                       />
                     </button>
+                    <p
+                      className={
+                        copyAlert ? 'copy--alert' : 'see--less'
+                      }
+                    >
+                      copied
+                    </p>
                   </div>
                   <div className="post--counter">
                     {projectPhotos.map(
