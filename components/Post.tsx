@@ -170,30 +170,139 @@ function Post({
         <h1 onClick={handleGoBack}>kuralayusha</h1>
       </div>
       {data.map((project) => (
-        <div key={project.id} className="one">
+        <div
+          key={project.id}
+          className={showPost === project.id ? 'one' : 'none'}
+        >
           {showPost === project.id && (
             <div className="post--container">
-              <Link href={project.link} target={'_blank'}>
-                <img
-                  src={projectPhotos[currentSlide]}
-                  alt="post photo"
-                  className="post--photo"
-                />
-              </Link>
-              <img
-                className="slider--btn left"
-                onClick={handleSliderDecrease}
-                src={arrowLight.src}
-                alt="left arrow"
-              />
-              <img
-                className="slider--btn right"
-                onClick={handleSliderIncrease}
-                src={arrowLight.src}
-                alt="right arrow"
-              />
+              <div>
+                <Link href={project.link} target={'_blank'}>
+                  <img
+                    src={projectPhotos[currentSlide]}
+                    alt="post photo"
+                    className="post--photo"
+                  />
+                </Link>
+              </div>
+              <div className="post--details desktop">
+                <div className="post--details--container">
+                  <p className="post--definition">
+                    <img
+                      className="slider--btn desktop left "
+                      onClick={handleSliderDecrease}
+                      src={arrowLight.src}
+                      alt="left arrow"
+                    />
+                    <img
+                      className="slider--btn desktop right "
+                      onClick={handleSliderIncrease}
+                      src={arrowLight.src}
+                      alt="right arrow"
+                    />
+                    <span>kuralayusha</span> This is the{' '}
+                    <span>{project.name}</span> project.{' '}
+                    {project.description}
+                  </p>
+                  <div className="post--technologys">
+                    {project.technologies.map((technology) => (
+                      <span key={technology}>#{technology}</span>
+                    ))}
+                  </div>
+                </div>
+                <div className="post--down">
+                  <div className="post--buttons">
+                    <div className="post--buttons--ls">
+                      <button onClick={(e) => handleLike(e)}>
+                        {likes[showPost].liked ? (
+                          <img
+                            className="post--btns"
+                            src={redHeart.src}
+                            alt="liked heart"
+                          />
+                        ) : (
+                          <img
+                            className="post--btns"
+                            src={
+                              darkMode
+                                ? emptyBlackHeart.src
+                                : emptyWhiteHeart.src
+                            }
+                            alt="like"
+                          />
+                        )}
+                      </button>
+                      <button onClick={(e) => handleSend(e)}>
+                        <img
+                          className="post--btns"
+                          src={
+                            darkMode ? copyDark.src : copyLight.src
+                          }
+                          alt="copy link"
+                        />
+                      </button>
+                      <p
+                        className={
+                          copyAlert ? 'copy--alert' : 'see--less'
+                        }
+                      >
+                        copied
+                      </p>
+                    </div>
 
-              <div className="post--details">
+                    <div className="post--buttons--gv">
+                      <button>
+                        <Link href={project.link} target={'_blank'}>
+                          <img
+                            className="post--btns"
+                            src={
+                              darkMode
+                                ? githubDark.src
+                                : githubLight.src
+                            }
+                            alt="github"
+                          />
+                        </Link>
+                      </button>
+                      <button>
+                        <Link href={project.link} target={'_blank'}>
+                          <img
+                            className="post--btns"
+                            src={
+                              darkMode ? webDark.src : webLight.src
+                            }
+                            alt="website"
+                          />
+                        </Link>
+                      </button>
+                    </div>
+                  </div>
+                  <p className="post--likes">{renderLikes} likes</p>
+                </div>
+                <div className="post--counter">
+                  {projectPhotos.map((photo: any, index: number) => (
+                    <div
+                      key={index}
+                      className={`post--photo--slider ${
+                        currentSlide === index ? 'active' : ''
+                      }`}
+                    ></div>
+                  ))}
+                </div>
+              </div>
+              <div className="post--details mobile">
+                <img
+                  className="slider--btn mobile left  "
+                  onClick={handleSliderDecrease}
+                  src={arrowLight.src}
+                  alt="left arrow"
+                />
+                <img
+                  className="slider--btn mobile right  "
+                  onClick={handleSliderIncrease}
+                  src={arrowLight.src}
+                  alt="right arrow"
+                />
                 <div className="post--buttons">
                   <div className="post--buttons--ls">
                     <button onClick={(e) => handleLike(e)}>
