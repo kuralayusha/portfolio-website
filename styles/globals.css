@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #000000;
+}
+
 main {
   height: 100vh;
 }
@@ -327,10 +331,9 @@ main {
 
 .posts--project {
   display: grid;
-  gap: 1px;
   grid-template-columns: repeat(3, 1fr);
   margin-top: 30px;
-  padding: 0 5px 0 5px;
+  /* padding: 0 5px 0 5px; */
 }
 
 .post {
@@ -540,7 +543,7 @@ main {
   margin-left: 50%;
   transform: translateX(-50%);
   width: 100vw;
-  height: 95vw;
+  height: 100vw;
 }
 
 .post--details {
@@ -710,6 +713,7 @@ main {
   justify-content: space-around;
   width: 32vw;
   height: 32vw;
+  /* padding: 0 20%; */
 }
 
 .info--data {
@@ -730,7 +734,7 @@ main {
 }
 
 .post-entry-info--datas img {
-  /* margin-left: 15px; */
+  margin-left: 15px;
 }
 
 .post-entry-info--datas p {
@@ -820,8 +824,48 @@ main {
 
 /*------------------------------------------- Desktop 2---------------------------------------- */
 
-/* @media screen and (min-width: 768px) {
+@media screen and (min-width: 578px) {
   .mainPage--container {
-    max-width: 769px;
+    width: 600px;
+    margin: 0 auto;
   }
-} */
+
+  main {
+    height: 1%;
+  }
+
+  .posts--project {
+    width: 600px;
+    height: 600px;
+  }
+  
+  .project--card {
+    width: 200px;
+    height: 200px;
+  }
+
+  .project--card img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .post-entry-info,
+  .post-entry-info--datas{
+    width: 200px;
+    height: 200px;
+  }
+
+  .desktop--main {
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+
+  .info--bio {
+    min-height: 166px;
+  }
+  
+}
+
+/*------------------------------------------- Desktop 3---------------------------------------- */
+
+@media screen and (min-width: 815px) {}
