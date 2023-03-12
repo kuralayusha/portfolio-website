@@ -65,7 +65,7 @@ export default function Home(props: { pageViwers: number }) {
     })
   }, [r])
 
-  console.log({ likesData })
+  // console.log({ likesData })
 
   useEffect(() => {
     const arr = Object.values(likesData)
