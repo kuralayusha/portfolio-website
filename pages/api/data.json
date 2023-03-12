@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Countries Website",
-    "image": ["/images/country-ss-1.jpg", "/images/country-ss-2.jpg"],
+    "image": ["/images/country-ss-2.jpg", "/images/country-ss-1.jpg"],
     "description": "I created this project to improve my API usage skills. While in the unfiltered state, you can preview all the country names, flags, population, region, and capital. Additionally you can filter the countries by region or search for them directly by name. When you click on each country, you are redirected to a unique link for that country, so if you know the country's abbreviation code, you can directly reach the page of that country by typing it into the URL. On that page, in addition to the information you obtained in the preview, you can learn the country's time zone, currency, or neighboring countries if available. It is compatible with both mobile and desktop.",
     "link": "https://kuralayusha.github.io/countries/#/",
     "codeLink": "https://github.com/kuralayusha/countries",
@@ -35,10 +35,9 @@
     "id": 3,
     "name": "Kanban Task Manager",
     "image": [
+      "/images/kanban-ss-4.jpg",
       "/images/kanban-ss-1.jpg",
-      "/images/kanban-ss-2.jpg",
-      "/images/kanban-ss-3.jpg",
-      "/images/kanban-ss-4.jpg"
+      "/images/kanban-ss-3.jpg"
     ],
     "description": "This project greatly improved many of my skills. In frontend, I developed my functions and improved adding, editing, and removing data from the localStorage. On the site, you can personalize many things and prepare your to-do boards. You can create as many task lists as you want and place your tasks in these boards. If there are any subtasks for each task, you can write them down, mark them as done, and drag and drop them to any column.",
     "link": "https://mellifluous-caramel-c4234f.netlify.app",
@@ -91,9 +90,9 @@
     "id": 6,
     "name": "Rock Paper Scissors Game",
     "image": [
+      "/images/rps-ss-3.jpg",
       "/images/rps-ss-1.jpg",
-      "/images/rps-ss-2.jpg",
-      "/images/rps-ss-3.jpg"
+      "/images/rps-ss-2.jpg"
     ],
     "description": "You can have a fun time playing against the CPU. Although RPSLS (Rock-Paper-Scissors-Lizard-Spock) is included, I haven't been able to reach 10 points in RPS yet. The rules are shown on the in-game screen. If anyone manages to score more than 10 points, I'd love to know about it. Don't hesitate to contact me :)",
     "link": "https://kuralayusha.github.io/rock-paper-scissors/",
@@ -131,8 +130,8 @@
     "id": 8,
     "name": "Portfolio Site",
     "image": [
-      "/images/portfolio-ss-1.jpg",
       "/images/portfolio-ss-2.jpg",
+      "/images/portfolio-ss-1.jpg",
       "/images/portfolio-ss-3.jpg",
       "/images/portfolio-ss-4.jpg"
     ],

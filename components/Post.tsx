@@ -176,7 +176,31 @@ function Post({
         >
           {showPost === project.id && (
             <div className="post--container">
-              <div>
+              <div className="post--container--top">
+                <img
+                  className="slider--btn mobile left  "
+                  onClick={handleSliderDecrease}
+                  src={arrowLight.src}
+                  alt="left arrow"
+                />
+                <img
+                  className="slider--btn mobile right  "
+                  onClick={handleSliderIncrease}
+                  src={arrowLight.src}
+                  alt="right arrow"
+                />
+                <img
+                  className="slider--btn desktop left "
+                  onClick={handleSliderDecrease}
+                  src={arrowLight.src}
+                  alt="left arrow"
+                />
+                <img
+                  className="slider--btn desktop right "
+                  onClick={handleSliderIncrease}
+                  src={arrowLight.src}
+                  alt="right arrow"
+                />
                 <Link href={project.link} target={'_blank'}>
                   <img
                     src={projectPhotos[currentSlide]}
@@ -188,18 +212,6 @@ function Post({
               <div className="post--details desktop">
                 <div className="post--details--container">
                   <p className="post--definition">
-                    <img
-                      className="slider--btn desktop left "
-                      onClick={handleSliderDecrease}
-                      src={arrowLight.src}
-                      alt="left arrow"
-                    />
-                    <img
-                      className="slider--btn desktop right "
-                      onClick={handleSliderIncrease}
-                      src={arrowLight.src}
-                      alt="right arrow"
-                    />
                     <span>kuralayusha</span> This is the{' '}
                     <span>{project.name}</span> project.{' '}
                     {project.description}
@@ -282,30 +294,8 @@ function Post({
                   </div>
                   <p className="post--likes">{renderLikes} likes</p>
                 </div>
-                <div className="post--counter">
-                  {projectPhotos.map((photo: any, index: number) => (
-                    <div
-                      key={index}
-                      className={`post--photo--slider ${
-                        currentSlide === index ? 'active' : ''
-                      }`}
-                    ></div>
-                  ))}
-                </div>
               </div>
               <div className="post--details mobile">
-                <img
-                  className="slider--btn mobile left  "
-                  onClick={handleSliderDecrease}
-                  src={arrowLight.src}
-                  alt="left arrow"
-                />
-                <img
-                  className="slider--btn mobile right  "
-                  onClick={handleSliderIncrease}
-                  src={arrowLight.src}
-                  alt="right arrow"
-                />
                 <div className="post--buttons">
                   <div className="post--buttons--ls">
                     <button onClick={(e) => handleLike(e)}>
