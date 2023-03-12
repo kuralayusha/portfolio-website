@@ -396,15 +396,24 @@ main {
 .close--icon {
   width: 30px;
   height: 30px;
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80%;
 }
 
 .inputs--area {
   /* background-color: #0000009f; */
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  height: 85vh;
+  justify-content: center; */
+  max-width: 500px;
+  /* height: 85vh; */
 }
 
 .mail--inputs {
@@ -957,6 +966,7 @@ main {
   .project--card {
     width: 200px;
     height: 200px;
+    cursor: pointer;
   }
 
   .project--card img {
