@@ -65,6 +65,8 @@ export default function Home(props: { pageViwers: number }) {
     })
   }, [r])
 
+  // console.log({ likesData })
+
   useEffect(() => {
     const arr = Object.values(likesData)
     const sum = arr.reduce((a: any, b: any) => a + b, 0)
