@@ -1,6 +1,6 @@
-import { ProjectData } from "@/pages"
-import profilePhoto from "../public/images/profile-photo.jpg"
-import Image from "next/image"
+import { ProjectData } from '@/pages'
+import profilePhoto from '../public/images/profile-photo.jpg'
+import Image from 'next/image'
 
 type MobileMainProps = {
   data: ProjectData
@@ -27,7 +27,7 @@ function DesktopMain({
 }: MobileMainProps) {
   function handleDownloadCv() {
     window.open(
-      "https://drive.google.com/file/d/1I6L5vLLvXiCS28OMaU1Tv85TrnERuBmW/view?usp=sharing"
+      'https://drive.google.com/file/d/1I6L5vLLvXiCS28OMaU1Tv85TrnERuBmW/view?usp=sharing'
     )
   }
 
@@ -38,7 +38,7 @@ function DesktopMain({
   return (
     <div className="desktop--main">
       <div className="info--left">
-        {" "}
+        {' '}
         <Image
           className="info--top--img"
           src={profilePhoto}
@@ -67,7 +67,7 @@ function DesktopMain({
             <span>Posts</span>
           </div>
           <div className="web--datas">
-            <h4>{calculating ? ". . ." : sumOfLikes}</h4>
+            <h4>{calculating ? '. . .' : sumOfLikes}</h4>
             <span>Likes</span>
           </div>
           <div className="web--datas">
@@ -82,19 +82,19 @@ function DesktopMain({
           <p>
             Hi! my name is Yusha and I am a computer engineering
             student.
-            <span className={seeMore ? "see--less" : "see--more"}>
+            <span className={seeMore ? 'see--less' : 'see--more'}>
               ...
             </span>
-            <span className={seeMore ? "see--more" : "see--less"}>
-              {" "}
+            <span className={seeMore ? 'see--more' : 'see--less'}>
+              {' '}
               For me, frontend development is the most satisfying
               thing to do. I am currently looking for a job because
               being a part of a team that shares the same passion as
-              me is my primary goal. Please don't hesitate to contact
-              me on any topic. I hope you enjoy my projects.
+              me is my primary goal. Please don&apos;t hesitate to
+              contact me on any topic. I hope you enjoy my projects.
             </span>
             <span className="see--btn" onClick={handleSeeMore}>
-              {seeMore ? "less" : "more"}
+              {seeMore ? 'less' : 'more'}
             </span>
           </p>
         </div>
