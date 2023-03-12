@@ -1,6 +1,6 @@
 // TODOS: dark mode mail closer icon [done]
 // copy to clipboard alert [done]
-// data fix
+// data fix [done]
 // add text under the socials [done]
 // maybe add a intro signiture
 // add see more see less buttons to descriptions [done]

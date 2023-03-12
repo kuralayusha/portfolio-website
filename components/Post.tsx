@@ -78,16 +78,16 @@ function Post({
       // console.log('dec', project.status.decreaseLikes)
 
       if (project.id === showPost) {
-        console.log('buraya girdi')
+        // console.log('buraya girdi')
         setLikeLinkDec(project.status.decreaseLikes)
         setLikeLinkInc(project.status.increaseLikes)
 
         if (likes[showPost].liked) {
-          console.log('düşürüyom')
+          // console.log('düşürüyom')
           setShowLike(project.status.likes)
           setTrigger(false)
         } else {
-          console.log('arttiriyom')
+          // console.log('arttiriyom')
           setShowLike(project.status.likes)
           setTrigger(true)
         }
@@ -126,7 +126,7 @@ function Post({
   //   }
   // }, [postsLike])
 
-  console.log({ renderLikes })
+  // console.log({ renderLikes })
 
   function handleSend(e: React.MouseEvent<HTMLButtonElement>) {
     data.map((project) => {

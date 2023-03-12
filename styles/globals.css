@@ -6,6 +6,26 @@
   box-sizing: border-box;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.mainPage--posts.no {
+  display: none;
+}
+
+.mainPage--info.no {
+  display: none;
+}
+
+.post--page {
+  overflow: hidden;
+}
+
+.post--page::-webkit-scrollbar {
+  display: none;
+}
+
 .none {
   display: none;
 }
@@ -787,7 +807,7 @@ form {
 
 /* -------------------------------------Desktop----------------------------------- */
 
-@media screen and (min-width: 426px) {
+@media screen and (min-width: 480px) {
   .mobile--main {
     display: none;
   }
@@ -862,6 +882,76 @@ form {
 
   .info--bio {
     padding: 0;
+  }
+
+  /*  */
+  /*  */
+  /*  */
+
+  
+  
+
+}
+
+@media screen and (min-width: 350px) {
+  .post--page {
+    overflow: scroll;
+  }
+}
+
+
+/*------------------------------------------- Desktop 2---------------------------------------- */
+
+
+@media screen and (min-width: 578px) {
+  .mainPage--container {
+    width: 600px;
+    margin: 0 auto;
+  }
+
+  main {
+    height: 1%;
+  }
+
+  .posts--project {
+    width: 600px;
+    height: 600px;
+  }
+  
+  .project--card {
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+  }
+
+  .project--card img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .post-entry-info,
+  .post-entry-info--datas{
+    width: 200px;
+    height: 200px;
+  }
+
+  .desktop--main {
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+
+  .info--bio {
+    min-height: 166px;
+  }
+  
+}
+
+/*------------------------------------------- Desktop 3---------------------------------------- */
+
+@media screen and (min-width: 700px) {
+
+  .post--page {
+    overflow: hidden;
   }
 
   .post--details.mobile {
@@ -973,54 +1063,5 @@ form {
   .post--likes {
     margin-bottom: 70px;
   }
-
-}
-
-
-/*------------------------------------------- Desktop 2---------------------------------------- */
-
-@media screen and (min-width: 578px) {
-  .mainPage--container {
-    width: 600px;
-    margin: 0 auto;
-  }
-
-  main {
-    height: 1%;
-  }
-
-  .posts--project {
-    width: 600px;
-    height: 600px;
-  }
-  
-  .project--card {
-    width: 200px;
-    height: 200px;
-    cursor: pointer;
-  }
-
-  .project--card img {
-    width: 200px;
-    height: 200px;
-  }
-
-  .post-entry-info,
-  .post-entry-info--datas{
-    width: 200px;
-    height: 200px;
-  }
-
-  .desktop--main {
-    justify-content: space-between;
-    margin-top: 30px;
-  }
-
-  .info--bio {
-    min-height: 166px;
-  }
   
 }
-
-/*------------------------------------------- Desktop 3---------------------------------------- */
-

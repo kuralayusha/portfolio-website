@@ -10,6 +10,7 @@ type MobileMainProps = {
   setSeeMore: any
   showMail: boolean
   setShowMail: any
+  showPost: number
 }
 
 function DesktopMain({
@@ -21,6 +22,7 @@ function DesktopMain({
   setSeeMore,
   showMail,
   setShowMail,
+  showPost,
 }: MobileMainProps) {
   function handleDownloadCv() {
     window.open(
