@@ -48,12 +48,16 @@ function MainPage({
   useEffect(() => {
     // Local storage'dan beğeni durumunu çekiyoruz
     const storedLikes = localStorage.getItem('likes')
+    // console.log('likes a baktim ', storedLikes)
 
     if (storedLikes) {
+      // console.log('doluymuş çektim', likes)
       setLikes(JSON.parse(storedLikes))
     } else {
+      // console.log('boşmuş', likes)
       // Local storage'da beğeni durumu yoksa, her bir proje id si için beğeni kısmı false olan bir obje oluşturuyoruz
       data.map((project) => {
+        // console.log('setting the data')
         setLikes((prev: any) => ({
           ...prev,
           [project.id]: {
@@ -61,6 +65,7 @@ function MainPage({
           },
         }))
       })
+      // console.log('olusturdum', likes)
     }
   }, [])
 
@@ -70,10 +75,10 @@ function MainPage({
 
       async function fetchViews(link: string) {
         const response = await fetch(link)
-        const datas = await response.json()
+        const data = await response.json()
         setPostViews((prev: any) => ({
           ...prev,
-          [project.id]: datas.value,
+          [project.id]: data.value,
         }))
       }
 

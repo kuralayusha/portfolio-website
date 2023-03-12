@@ -56,10 +56,10 @@ export default function Home(props: { pageViwers: number }) {
       fetchLikes(link)
       async function fetchLikes(link: string) {
         const response = await fetch(link)
-        const datas = await response.json()
+        const data = await response.json()
         setLikesData((prev: any) => ({
           ...prev,
-          [project.id]: datas.value,
+          [project.id]: data.value,
         }))
       }
     })

@@ -93,7 +93,7 @@ function DesktopMain({
               me on any topic. I hope you enjoy my projects.
             </span>
             <span className="see--btn" onClick={handleSeeMore}>
-              {seeMore ? ' less' : ' more'}
+              {seeMore ? 'less' : 'more'}
             </span>
           </p>
         </div>
