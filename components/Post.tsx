@@ -252,7 +252,10 @@ function Post({
 
                     <div className="post--buttons--gv">
                       <button>
-                        <Link href={project.link} target={'_blank'}>
+                        <Link
+                          href={project.codeLink}
+                          target={'_blank'}
+                        >
                           <img
                             className="post--btns"
                             src={
@@ -353,7 +356,7 @@ function Post({
                   </div>
                   <div className="post--buttons--gv">
                     <button>
-                      <Link href={project.link} target={'_blank'}>
+                      <Link href={project.codeLink} target={'_blank'}>
                         <img
                           className="post--btns two"
                           src={

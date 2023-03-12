@@ -126,5 +126,26 @@
       "increaseLikes": "https://api.countapi.xyz/update/kurleys-web/dataLikes7/?amount=1",
       "decreaseLikes": "https://api.countapi.xyz/update/kurleys-web/dataLikes7/?amount=-1"
     }
+  },
+  {
+    "id": 8,
+    "name": "Portfolio Site",
+    "image": [
+      "/images/portfolio-ss-1.jpg",
+      "/images/portfolio-ss-2.jpg",
+      "/images/portfolio-ss-3.jpg",
+      "/images/portfolio-ss-4.jpg"
+    ],
+    "description": "I designed this website to showcase my projects and provide brief information about them. As you may guess, it is similar to an Instagram profile. On this site, you can download my CV, send me an email, and I also implemented a simple system to count the number of visits to the site, as well as a like function for each post. I hope you like it :)",
+    "link": "https://whimsical-tapioca-a1ab20.netlify.app",
+    "codeLink": "https://github.com/kuralayusha/portfolio-website",
+    "technologies": ["React", "TypeScript", "Next.js"],
+    "status": {
+      "views": "https://api.countapi.xyz/get/dataViews/33cf72b7-76a8-409e-ae14-14f921507a0f",
+      "increaseViews": "https://api.countapi.xyz/update/dataViews/33cf72b7-76a8-409e-ae14-14f921507a0f/?amount=1",
+      "likes": "https://api.countapi.xyz/get/dataLikes/89127e6f-96cc-4cce-be5a-2d6281483861",
+      "increaseLikes": "https://api.countapi.xyz/update/dataLikes/89127e6f-96cc-4cce-be5a-2d6281483861/?amount=1",
+      "decreaseLikes": "https://api.countapi.xyz/update/dataLikes/89127e6f-96cc-4cce-be5a-2d6281483861/?amount=-1"
+    }
   }
 ]

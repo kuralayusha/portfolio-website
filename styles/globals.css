@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+img {
+  object-fit: cover;
+}
+
 .post--details.desktop {
   display: none;
 }
@@ -340,17 +344,18 @@ main {
   /* padding: 0 5px 0 5px; */
 }
 
+.project--card {
+  width: 32vw;
+  height: 32vw;
+  position: relative;
+}
+
 .post {
   width: 32vw;
   height: 32vw;
   border: 0.5px solid #0000003f;
 }
 
-.project--card {
-  width: 32vw;
-  height: 32vw;
-  position: relative;
-}
 
 /*------------------------------ SEND MAİL-------------------- */
 
