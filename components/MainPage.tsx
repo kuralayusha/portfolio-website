@@ -14,6 +14,7 @@ import { equal } from 'assert'
 
 import MobileMain from './MobileMain'
 import DesktopMain from './DesktopMain'
+import Image from 'next/image'
 
 type MainPageProps = {
   data: ProjectData
@@ -135,8 +136,8 @@ function MainPage({
             className="social--btn--txt"
           >
             <div className="social--btn--cover">
-              <img
-                src={githubLogo.src}
+              <Image
+                src={githubLogo}
                 alt="github"
                 className="social--btn"
               />
@@ -148,8 +149,8 @@ function MainPage({
             target={'_blank'}
           >
             <div className="social--btn--cover">
-              <img
-                src={linkedinLogo.src}
+              <Image
+                src={linkedinLogo}
                 alt="linkedin"
                 className="social--btn"
               />
@@ -161,8 +162,8 @@ function MainPage({
             target={'_blank'}
           >
             <div className="social--btn--cover">
-              <img
-                src={twitterLogo.src}
+              <Image
+                src={twitterLogo}
                 alt="twitter"
                 className="social--btn"
               />
@@ -174,8 +175,8 @@ function MainPage({
             target={'_blank'}
           >
             <div className="social--btn--cover">
-              <img
-                src={instagramLogo.src}
+              <Image
+                src={instagramLogo}
                 alt="instagram"
                 className="social--btn"
               />

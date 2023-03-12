@@ -15,6 +15,8 @@ import githubLight from '@/public/icons/github.svg'
 import webLight from '@/public/icons/website-for-light.svg'
 import webDark from '@/public/icons/website-for-dark.svg'
 
+import Image from 'next/image'
+
 type PostProps = {
   data: ProjectData
   focusInfoId: number
@@ -166,7 +168,7 @@ function Post({
     <div className="post--page">
       {r}
       <div className="post--bar">
-        <img src={profilePhoto.src} alt="" onClick={handleGoBack} />
+        <Image src={profilePhoto} alt="" onClick={handleGoBack} />
         <h1 onClick={handleGoBack}>kuralayusha</h1>
       </div>
       {data.map((project) => (
@@ -177,35 +179,37 @@ function Post({
           {showPost === project.id && (
             <div className="post--container">
               <div className="post--container--top">
-                <img
+                <Image
                   className="slider--btn mobile left  "
                   onClick={handleSliderDecrease}
-                  src={arrowLight.src}
+                  src={arrowLight}
                   alt="left arrow"
                 />
-                <img
+                <Image
                   className="slider--btn mobile right  "
                   onClick={handleSliderIncrease}
-                  src={arrowLight.src}
+                  src={arrowLight}
                   alt="right arrow"
                 />
-                <img
+                <Image
                   className="slider--btn desktop left "
                   onClick={handleSliderDecrease}
-                  src={arrowLight.src}
+                  src={arrowLight}
                   alt="left arrow"
                 />
-                <img
+                <Image
                   className="slider--btn desktop right "
                   onClick={handleSliderIncrease}
-                  src={arrowLight.src}
+                  src={arrowLight}
                   alt="right arrow"
                 />
                 <Link href={project.link} target={'_blank'}>
-                  <img
+                  <Image
                     src={projectPhotos[currentSlide]}
                     alt="post photo"
                     className="post--photo"
+                    width={400}
+                    height={400}
                   />
                 </Link>
               </div>
@@ -300,27 +304,27 @@ function Post({
                   <div className="post--buttons--ls">
                     <button onClick={(e) => handleLike(e)}>
                       {likes[showPost].liked ? (
-                        <img
+                        <Image
                           className="post--btns"
-                          src={redHeart.src}
+                          src={redHeart}
                           alt="liked heart"
                         />
                       ) : (
-                        <img
+                        <Image
                           className="post--btns"
                           src={
                             darkMode
-                              ? emptyBlackHeart.src
-                              : emptyWhiteHeart.src
+                              ? emptyBlackHeart
+                              : emptyWhiteHeart
                           }
                           alt="like"
                         />
                       )}
                     </button>
                     <button onClick={(e) => handleSend(e)}>
-                      <img
+                      <Image
                         className="post--btns one"
-                        src={darkMode ? copyDark.src : copyLight.src}
+                        src={darkMode ? copyDark : copyLight}
                         alt="copy link"
                       />
                     </button>
@@ -347,22 +351,18 @@ function Post({
                   <div className="post--buttons--gv">
                     <button>
                       <Link href={project.codeLink} target={'_blank'}>
-                        <img
+                        <Image
                           className="post--btns two"
-                          src={
-                            darkMode
-                              ? githubDark.src
-                              : githubLight.src
-                          }
+                          src={darkMode ? githubDark : githubLight}
                           alt="github"
                         />
                       </Link>
                     </button>
                     <button>
                       <Link href={project.link} target={'_blank'}>
-                        <img
+                        <Image
                           className="post--btns"
-                          src={darkMode ? webDark.src : webLight.src}
+                          src={darkMode ? webDark : webLight}
                           alt="website"
                         />
                       </Link>

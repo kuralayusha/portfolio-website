@@ -1,6 +1,7 @@
 import { ProjectData } from '@/pages'
 import ShowPostInfo from './ShowPostInfo'
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 type ProjectPostsProps = {
   data: ProjectData
@@ -67,11 +68,13 @@ function ProjectPosts({
               postViews={postViews}
             />
           )}
-          <img
+          <Image
             className="post"
             src={project.image[0]}
             alt={project.name}
             key={project.id}
+            width={1920}
+            height={1080}
           />
         </div>
       ))}

@@ -1,5 +1,6 @@
 import { ProjectData } from '@/pages'
 import profilePhoto from '../public/images/profile-photo.jpg'
+import Image from 'next/image'
 
 type MobileMainProps = {
   data: ProjectData
@@ -37,9 +38,9 @@ function MobileMain({
   return (
     <div className="mobile--main">
       <div className="info--top">
-        <img
+        <Image
           className="info--top--img"
-          src={profilePhoto.src}
+          src={profilePhoto}
           alt="pp"
         />
         <div className="info--top--datas">
