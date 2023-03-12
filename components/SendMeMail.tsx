@@ -78,7 +78,6 @@ function SendMeMail({ setShowMail, darkMode }: SendMeMailProps) {
             className="mail--inputs message"
             placeholder="Your message"
             name="message"
-            aria-setsize={50}
             required
             autoComplete="off"
           />
