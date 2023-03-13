@@ -6,6 +6,7 @@
 // add see more see less buttons to descriptions [done]
 
 import Head from 'next/head'
+import Intro from '@/components/Intro'
 import { useEffect, useState } from 'react'
 
 import NavBar from '../components/NavBar'
@@ -39,6 +40,13 @@ export default function Home(props: { pageViwers: number }) {
   const [calculating, setCalculating] = useState<boolean>(true)
   const [userDataStarter, setUserDataStarter] = useState<any>({})
   const [r, setR] = useState<boolean>(false)
+  const [showIntro, setShowIntro] = useState<boolean>(true)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowIntro(false)
+    }, 5500)
+  }, [])
 
   useEffect(() => {
     const darkMode = localStorage.getItem('theme')
@@ -90,8 +98,18 @@ export default function Home(props: { pageViwers: number }) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <NavBar setDarkMode={setDarkMode} darkMode={darkMode} />
+      <main className={showIntro ? 'main noFlow' : 'main'}>
+        {showIntro && (
+          <Intro darkMode={darkMode} showIntro={showIntro} r={r} />
+        )}
+
+        <NavBar
+          setDarkMode={setDarkMode}
+          darkMode={darkMode}
+          setShowIntro={setShowIntro}
+          setR={setR}
+          r={r}
+        />
         <MainPage
           data={data}
           visitors={visitors}
