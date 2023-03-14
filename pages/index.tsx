@@ -42,6 +42,29 @@ export default function Home(props: { pageViwers: number }) {
   const [r, setR] = useState<boolean>(false)
   const [showIntro, setShowIntro] = useState<boolean>(true)
 
+  // in this useEffect we are fetching the url to get the page views from this apis
+  // 'https://api.countapi.xyz/get/kurleys-web/profile-site' this is the url for the views
+  // 'https://api.countapi.xyz/update/kurleys-web/profile-site/?amount=1' this is the url for the increase views
+  useEffect(() => {
+    async function increaseViews() {
+      const response = await fetch(
+        'https://api.countapi.xyz/update/kurleys-web/profile-site/?amount=1'
+      )
+      const data = await response.json()
+      setVisitors(data.value)
+    }
+    increaseViews()
+
+    async function fetchViews() {
+      const response = await fetch(
+        'https://api.countapi.xyz/get/kurleys-web/profile-site'
+      )
+      const data = await response.json()
+      setVisitors(data.value)
+    }
+    fetchViews()
+  }, [])
+
   useEffect(() => {
     setTimeout(() => {
       setShowIntro(false)
@@ -126,18 +149,18 @@ export default function Home(props: { pageViwers: number }) {
   )
 }
 
-export const getStaticProps = async () => {
-  const response = await fetch(
-    'https://api.countapi.xyz/get/kurleys-web/profile-site'
-  ).then((res) => res.json())
+// export const getStaticProps = async () => {
+//   const response = await fetch(
+//     'https://api.countapi.xyz/get/kurleys-web/profile-site'
+//   ).then((res) => res.json())
 
-  const res = await fetch(
-    'https://api.countapi.xyz/update/kurleys-web/profile-site/?amount=1'
-  ).then((res) => res.json())
+//   const res = await fetch(
+//     'https://api.countapi.xyz/update/kurleys-web/profile-site/?amount=1'
+//   ).then((res) => res.json())
 
-  return {
-    props: {
-      pageViwers: response.value,
-    },
-  }
-}
+//   return {
+//     props: {
+//       pageViwers: response.value,
+//     },
+//   }
+// }
