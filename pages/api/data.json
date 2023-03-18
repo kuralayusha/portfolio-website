@@ -2,11 +2,7 @@
   {
     "id": 9,
     "name": "Perfect Pair",
-    "image": [
-      "/images/love-test-ss-1.jpg",
-      "/images/love-test-ss-2.jpg",
-      "/images/love-test-ss-3.jpg"
-    ],
+    "image": ["/images/love-test-ss-1.jpg"],
     "description": "I created this project in a hurry for a competition. It's a fun relationship quiz website with hover effects that you can use on desktop. You can chat with your partner and find out which area of relationships you fall into, or you can learn which relationship category your platonic friend fits into. Enjoy!",
     "link": "https://love-test-wheat.vercel.app",
     "codeLink": "https://github.com/kuralayusha/love-test",
