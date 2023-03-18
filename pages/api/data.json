@@ -1,5 +1,25 @@
 [
   {
+    "id": 9,
+    "name": "Perfect Pair",
+    "image": [
+      "/images/love-test-ss-1.jpg",
+      "/images/love-test-ss-2.jpg",
+      "/images/love-test-ss-3.jpg"
+    ],
+    "description": "I created this project in a hurry for a competition. It's a fun relationship quiz website with hover effects that you can use on desktop. You can chat with your partner and find out which area of relationships you fall into, or you can learn which relationship category your platonic friend fits into. Enjoy!",
+    "link": "https://love-test-wheat.vercel.app",
+    "codeLink": "https://github.com/kuralayusha/love-test",
+    "technologies": ["React", "TypeScript", "Next.js"],
+    "status": {
+      "views": "https://api.countapi.xyz/get/dataViews9/406c5613-d841-485e-a29a-150f851bdfe7",
+      "increaseViews": "https://api.countapi.xyz/update/dataViews9/406c5613-d841-485e-a29a-150f851bdfe7/?amount=1",
+      "likes": "https://api.countapi.xyz/get/dataLikes9/14bf1b94-def7-4889-a079-39bf43d17385",
+      "increaseLikes": "https://api.countapi.xyz/update/dataLikes9/14bf1b94-def7-4889-a079-39bf43d17385/?amount=1",
+      "decreaseLikes": "https://api.countapi.xyz/update/dataLikes9/14bf1b94-def7-4889-a079-39bf43d17385/?amount=-1"
+    }
+  },
+  {
     "id": 3,
     "name": "Kanban Task Manager",
     "image": [
