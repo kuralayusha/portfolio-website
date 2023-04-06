@@ -15,6 +15,7 @@ import { equal } from 'assert'
 import MobileMain from './MobileMain'
 import DesktopMain from './DesktopMain'
 import Image from 'next/image'
+import { log } from 'console'
 
 type MainPageProps = {
   data: ProjectData
@@ -51,8 +52,11 @@ function MainPage({
     const storedLikes = localStorage.getItem('likes')
     // console.log('likes a baktim ', storedLikes)
 
-    if (storedLikes) {
-      // console.log('doluymuş çektim', likes)
+    if (storedLikes && storedLikes.length === data.length) {
+      // if the storedLikes lenght is equal to data lenght then set the likes state to the storedLikes else
+      console.log('varmış', storedLikes.length)
+      console.log(data.length)
+
       setLikes(JSON.parse(storedLikes))
     } else {
       // console.log('boşmuş', likes)
